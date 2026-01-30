@@ -29,7 +29,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -238,8 +238,12 @@
         .en { display: none !important; }
         .en-inline { display: none !important; }
         
+        .cn { display: none !important; }
+        .cn-inline { display: none !important; }
+        
         /* Language switching - EN mode */
         .lang-en .ru, .lang-en .ru-inline { display: none !important; }
+        .lang-en .cn, .lang-en .cn-inline { display: none !important; }
         .lang-en .en { display: block !important; }
         .lang-en p.en, .lang-en div.en { display: block !important; }
         .lang-en span.en { display: inline !important; }
@@ -247,9 +251,24 @@
         .lang-en h1.en, .lang-en h2.en, .lang-en h3.en, .lang-en h4.en { display: block !important; }
         .lang-en .en-inline { display: inline !important; }
         
+        /* Language switching - CN mode */
+        .lang-cn .ru, .lang-cn .ru-inline { display: none !important; }
+        .lang-cn .en, .lang-cn .en-inline { display: none !important; }
+        .lang-cn .cn { display: block !important; }
+        .lang-cn p.cn, .lang-cn div.cn { display: block !important; }
+        .lang-cn span.cn { display: inline !important; }
+        .lang-cn li.cn { display: list-item !important; }
+        .lang-cn h1.cn, .lang-cn h2.cn, .lang-cn h3.cn, .lang-cn h4.cn { display: block !important; }
+        .lang-cn .cn-inline { display: inline !important; }
+        
+        /* Chinese font */
+        .lang-cn body, .lang-cn .hero h1, .lang-cn .section-title, .lang-cn .team-name { font-family: 'Noto Sans SC', 'Montserrat', sans-serif; }
+        
         .lang-en .gallery-img-ru { display: none; }
         .gallery-img-en { display: none; }
         .lang-en .gallery-img-en { display: block; }
+        .lang-cn .gallery-img-ru { display: none; }
+        .lang-cn .gallery-img-en { display: block; }
 
         .animate-on-scroll { opacity: 1; transform: translateY(0); transition: all 0.6s ease-out; }
         .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
@@ -341,75 +360,81 @@
             <img src="logo-en.png" alt="RCT Logo" class="logo-img gallery-img-en">
         </div>
         <nav>
-            <a href="#about"><span class="ru-inline">О компании</span><span class="en-inline">About</span></a>
-            <a href="#products"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span></a>
-            <a href="#cluster"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span></a>
-            <a href="#timeline"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span></a>
-            <a href="#team"><span class="ru-inline">Команда</span><span class="en-inline">Team</span></a>
-            <a href="#contact"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span></a>
+            <a href="#about"><span class="ru-inline">О компании</span><span class="en-inline">About</span><span class="cn-inline">关于我们</span></a>
+            <a href="#products"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span><span class="cn-inline">产品</span></a>
+            <a href="#cluster"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span><span class="cn-inline">医疗集群</span></a>
+            <a href="#timeline"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span><span class="cn-inline">路线图</span></a>
+            <a href="#team"><span class="ru-inline">Команда</span><span class="en-inline">Team</span><span class="cn-inline">团队</span></a>
+            <a href="#contact"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span><span class="cn-inline">联系方式</span></a>
         </nav>
         <div class="lang-switch">
             <button class="lang-btn active" data-lang="ru">RU</button>
             <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="cn">CN</button>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge"><span class="ru-inline">ОЭЗ Иннополис • Татарстан</span><span class="en-inline">SEZ Innopolis • Tatarstan</span></div>
+            <div class="hero-badge"><span class="ru-inline">ОЭЗ Иннополис • Татарстан</span><span class="en-inline">SEZ Innopolis • Tatarstan</span><span class="cn-inline">伊诺波利斯经济特区 • 鞑靼斯坦</span></div>
             <h1 class="ru">Локализация производства<br><span>компьютерных томографов</span><br>в России</h1>
             <h1 class="en">CT Scanner<br><span>Manufacturing</span><br>Localization in Russia</h1>
+            <h1 class="cn">俄罗斯<br><span>CT扫描仪</span><br>本地化生产</h1>
             <p class="ru">Первое в России полноцикловое производство КТ-сканеров с глубокой локализацией. Современные технологии, доступные цены, полное соответствие требованиям ПП 719.</p>
             <p class="en">Russia's first full-cycle CT scanner manufacturing with deep localization. Advanced technology, competitive pricing, full compliance with Government Resolution 719.</p>
+            <p class="cn">俄罗斯首个全周期CT扫描仪本地化生产。先进技术、优惠价格，完全符合第719号政府决议要求。</p>
             <div style="margin-bottom: 30px; padding: 20px; background: rgba(0,212,170,0.15); border: 1px solid rgba(0,212,170,0.3); border-radius: 15px; display: inline-block;">
                 <div style="display: flex; align-items: center; gap: 12px;">
                     <div style="width: 12px; height: 12px; background: var(--accent-teal); border-radius: 50%; animation: pulse 2s infinite;"></div>
                     <div>
-                        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-teal); margin-bottom: 4px;"><span class="ru-inline">Текущий статус</span><span class="en-inline">Current Status</span></div>
-                        <div style="font-size: 16px; font-weight: 600;"><span class="ru-inline">Регистрация ООО и поиск потенциальных партнёров</span><span class="en-inline">LLC Registration & Seeking Potential Partners</span></div>
+                        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-teal); margin-bottom: 4px;"><span class="ru-inline">Текущий статус</span><span class="en-inline">Current Status</span><span class="cn-inline">当前状态</span></div>
+                        <div style="font-size: 16px; font-weight: 600;"><span class="ru-inline">Регистрация ООО и поиск потенциальных партнёров</span><span class="en-inline">LLC Registration & Seeking Potential Partners</span><span class="cn-inline">有限责任公司注册及寻找潜在合作伙伴</span></div>
                     </div>
                 </div>
             </div>
             <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary"><span class="ru-inline">О компании</span><span class="en-inline">About Us</span></a>
-                <a href="#partners" class="btn btn-outline"><span class="ru-inline">Стать партнёром</span><span class="en-inline">Become a Partner</span></a>
+                <a href="#about" class="btn btn-primary"><span class="ru-inline">О компании</span><span class="en-inline">About Us</span><span class="cn-inline">关于我们</span></a>
+                <a href="#partners" class="btn btn-outline"><span class="ru-inline">Стать партнёром</span><span class="en-inline">Become a Partner</span><span class="cn-inline">成为合作伙伴</span></a>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">О компании</span><span class="en-inline">About Us</span></div>
-            <h2 class="section-title"><span class="ru-inline">РКТ — Российские Компьютерные Технологии</span><span class="en-inline">RCT — Russian Computer Technologies</span></h2>
+            <div class="section-tag"><span class="ru-inline">О компании</span><span class="en-inline">About Us</span><span class="cn-inline">关于我们</span></div>
+            <h2 class="section-title"><span class="ru-inline">РКТ — Российские Компьютерные Технологии</span><span class="en-inline">RCT — Russian Computer Technologies</span><span class="cn-inline">RCT — 俄罗斯计算机技术公司</span></h2>
         </div>
         <div class="about-content-wrapper">
             <div class="about-text">
                 <h3 class="ru">Миссия компании</h3>
                 <h3 class="en">Our Mission</h3>
+                <h3 class="cn">公司使命</h3>
                 <p class="ru">Компания «РКТ» создаётся для локализации производства высокотехнологичного медицинского оборудования в России. Наша цель — обеспечить российское здравоохранение современными компьютерными томографами отечественного производства по доступным ценам.</p>
                 <p class="en">RCT is being established to localize high-tech medical equipment manufacturing in Russia. Our goal is to provide Russian healthcare with modern domestically produced CT scanners at competitive prices.</p>
+                <p class="cn">RCT公司旨在实现高科技医疗设备在俄罗斯的本地化生产。我们的目标是以优惠的价格为俄罗斯医疗卫生系统提供现代化的国产CT扫描仪。</p>
                 <p class="ru">В партнёрстве с ведущим китайским производителем Syno-Tech Medical Technologies мы планируем создать полноцикловое производство КТ-сканеров на территории ОЭЗ «Иннополис» с последующим расширением в медтех-кластер.</p>
                 <p class="en">In partnership with leading Chinese manufacturer Syno-Tech Medical Technologies, we plan to establish full-cycle CT scanner production in the Innopolis SEZ with subsequent expansion into a medtech cluster.</p>
+                <p class="cn">我们与中国领先制造商思诺医疗科技合作，计划在伊诺波利斯经济特区建立全周期CT扫描仪生产基地，并进一步扩展为医疗科技产业集群。</p>
                 <div class="about-features">
                     <div class="about-feature">
                         <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
-                        <h4 class="ru">ПП 719</h4><h4 class="en">PP 719</h4>
-                        <p class="ru">Полное соответствие требованиям локализации</p><p class="en">Full compliance with localization requirements</p>
+                        <h4 class="ru">ПП 719</h4><h4 class="en">PP 719</h4><h4 class="cn">第719号决议</h4>
+                        <p class="ru">Полное соответствие требованиям локализации</p><p class="en">Full compliance with localization requirements</p><p class="cn">完全符合本地化要求</p>
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-                        <h4 class="ru">244 балла</h4><h4 class="en">244 Points</h4>
-                        <p class="ru">Максимальный балл локализации</p><p class="en">Maximum localization score</p>
+                        <h4 class="ru">244 балла</h4><h4 class="en">244 Points</h4><h4 class="cn">244分</h4>
+                        <p class="ru">Максимальный балл локализации</p><p class="en">Maximum localization score</p><p class="cn">最高本地化评分</p>
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></svg></div>
-                        <h4 class="ru">4 модели</h4><h4 class="en">4 Models</h4>
-                        <p class="ru">Полный модельный ряд 16–128 срезов</p><p class="en">Full range from 16 to 128 slices</p>
+                        <h4 class="ru">4 модели</h4><h4 class="en">4 Models</h4><h4 class="cn">4种型号</h4>
+                        <p class="ru">Полный модельный ряд 16–128 срезов</p><p class="en">Full range from 16 to 128 slices</p><p class="cn">16-128层全系列产品</p>
                     </div>
                     <div class="about-feature">
                         <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div>
-                        <h4 class="ru">ОЭЗ Иннополис</h4><h4 class="en">SEZ Innopolis</h4>
-                        <p class="ru">Налоговые льготы и инфраструктура</p><p class="en">Tax benefits and infrastructure</p>
+                        <h4 class="ru">ОЭЗ Иннополис</h4><h4 class="en">SEZ Innopolis</h4><h4 class="cn">伊诺波利斯经济特区</h4>
+                        <p class="ru">Налоговые льготы и инфраструктура</p><p class="en">Tax benefits and infrastructure</p><p class="cn">税收优惠及基础设施</p>
                     </div>
                 </div>
             </div>
@@ -422,37 +447,38 @@
 
     <section id="strategy" class="strategy">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Стратегия</span><span class="en-inline">Strategy</span></div>
-            <h2 class="section-title"><span class="ru-inline">От КТ к медтех-кластеру</span><span class="en-inline">From CT to MedTech Cluster</span></h2>
+            <div class="section-tag"><span class="ru-inline">Стратегия</span><span class="en-inline">Strategy</span><span class="cn-inline">发展战略</span></div>
+            <h2 class="section-title"><span class="ru-inline">От КТ к медтех-кластеру</span><span class="en-inline">From CT to MedTech Cluster</span><span class="cn-inline">从CT到医疗科技产业集群</span></h2>
             <p class="section-desc ru">Поэтапная стратегия развития: начинаем с компьютерных томографов, затем расширяемся в полноценный медтех-кластер</p>
             <p class="section-desc en">Phased development strategy: starting with CT scanners, then expanding into a full-scale medtech cluster</p>
+            <p class="section-desc cn">分阶段发展战略：从CT扫描仪起步，逐步扩展为完整的医疗科技产业集群</p>
         </div>
         <div class="strategy-flow">
             <div class="strategy-step active">
                 <div class="strategy-number">01</div>
-                <h4 class="ru">Компьютерные томографы</h4><h4 class="en">CT Scanners</h4>
-                <p class="ru">2025–2027: Локализация производства КТ 16–128 срезов, 140 ед./год</p><p class="en">2025–2027: CT scanner localization 16–128 slices, 140 units/yr</p>
-                <div class="status-badge"><span class="ru-inline">Текущий этап</span><span class="en-inline">Current Phase</span></div>
+                <h4 class="ru">Компьютерные томографы</h4><h4 class="en">CT Scanners</h4><h4 class="cn">CT扫描仪</h4>
+                <p class="ru">2025–2027: Локализация производства КТ 16–128 срезов, 140 ед./год</p><p class="en">2025–2027: CT scanner localization 16–128 slices, 140 units/yr</p><p class="cn">2025-2027年：16-128层CT扫描仪本地化生产，年产140台</p>
+                <div class="status-badge"><span class="ru-inline">Текущий этап</span><span class="en-inline">Current Phase</span><span class="cn-inline">当前阶段</span></div>
             </div>
             <div class="strategy-arrow">→</div>
             <div class="strategy-step">
                 <div class="strategy-number">02</div>
-                <h4 class="ru">Сопутствующее оборудование</h4><h4 class="en">Ancillary Equipment</h4>
-                <p class="ru">С 2028: Рентгены, флюорографы, маммографы — 7 515 ед./год</p><p class="en">From 2028: X-rays, fluorography, mammography — 7,515 units/yr</p>
+                <h4 class="ru">Сопутствующее оборудование</h4><h4 class="en">Ancillary Equipment</h4><h4 class="cn">配套设备</h4>
+                <p class="ru">С 2028: Рентгены, флюорографы, маммографы — 7 515 ед./год</p><p class="en">From 2028: X-rays, fluorography, mammography — 7,515 units/yr</p><p class="cn">2028年起：X光机、胸透机、乳腺机——年产7,515台</p>
             </div>
             <div class="strategy-arrow">→</div>
             <div class="strategy-step">
                 <div class="strategy-number">03</div>
-                <h4 class="ru">УЗИ-аппараты</h4><h4 class="en">Ultrasound Systems</h4>
-                <p class="ru">С 2028: Портативные и экспертного класса — 3 819 ед./год</p><p class="en">From 2028: Portable and expert class — 3,819 units/yr</p>
+                <h4 class="ru">УЗИ-аппараты</h4><h4 class="en">Ultrasound Systems</h4><h4 class="cn">超声设备</h4>
+                <p class="ru">С 2028: Портативные и экспертного класса — 3 819 ед./год</p><p class="en">From 2028: Portable and expert class — 3,819 units/yr</p><p class="cn">2028年起：便携式及专家级超声设备——年产3,819台</p>
             </div>
         </div>
     </section>
 
     <section id="kpi" class="kpi">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Показатели</span><span class="en-inline">Key Metrics</span></div>
-            <h2 class="section-title"><span class="ru-inline">Ключевые показатели проекта КТ</span><span class="en-inline">CT Project Key Performance Indicators</span></h2>
+            <div class="section-tag"><span class="ru-inline">Показатели</span><span class="en-inline">Key Metrics</span><span class="cn-inline">关键指标</span></div>
+            <h2 class="section-title"><span class="ru-inline">Ключевые показатели проекта КТ</span><span class="en-inline">CT Project Key Performance Indicators</span><span class="cn-inline">CT项目关键绩效指标</span></h2>
         </div>
         <div class="kpi-grid">
             <div class="kpi-card animate-on-scroll">
@@ -464,105 +490,106 @@
             <div class="kpi-card animate-on-scroll">
                 <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
                 <div class="kpi-value">7.2</div>
-                <div class="kpi-label"><span class="ru-inline">млрд ₽/год</span><span class="en-inline">bln ₽/year</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Выручка</span><span class="en-inline">Annual Revenue</span></div>
+                <div class="kpi-label"><span class="ru-inline">млрд ₽/год</span><span class="en-inline">bln ₽/year</span><span class="cn-inline">十亿卢布/年</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Выручка</span><span class="en-inline">Annual Revenue</span><span class="cn-inline">年收入</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
-                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
+                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">140</div>
-                <div class="kpi-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/year</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Мощность</span><span class="en-inline">Capacity</span></div>
+                <div class="kpi-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/year</span><span class="cn-inline">台/年</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Мощность</span><span class="en-inline">Capacity</span><span class="cn-inline">产能</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
-                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
+                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">506</div>
-                <div class="kpi-label"><span class="ru-inline">чел.</span><span class="en-inline">people</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Рабочих мест</span><span class="en-inline">Jobs Created</span></div>
+                <div class="kpi-label"><span class="ru-inline">чел.</span><span class="en-inline">people</span><span class="cn-inline">人</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Рабочих мест</span><span class="en-inline">Jobs Created</span><span class="cn-inline">就业岗位</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
-                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
+                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">27%</div>
                 <div class="kpi-label">IRR</div>
-                <div class="kpi-sublabel"><span class="ru-inline">Внутренняя норма доходности</span><span class="en-inline">Internal Rate of Return</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Внутренняя норма доходности</span><span class="en-inline">Internal Rate of Return</span><span class="cn-inline">内部收益率</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
-                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
+                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">5</div>
-                <div class="kpi-label"><span class="ru-inline">лет</span><span class="en-inline">years</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Срок окупаемости</span><span class="en-inline">Payback Period</span></div>
+                <div class="kpi-label"><span class="ru-inline">лет</span><span class="en-inline">years</span><span class="cn-inline">年</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Срок окупаемости</span><span class="en-inline">Payback Period</span><span class="cn-inline">投资回收期</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
                 <div class="kpi-value">244</div>
-                <div class="kpi-label"><span class="ru-inline">балла</span><span class="en-inline">points</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">ПП 719</span><span class="en-inline">PP 719 Score</span></div>
+                <div class="kpi-label"><span class="ru-inline">балла</span><span class="en-inline">points</span><span class="cn-inline">分</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">ПП 719</span><span class="en-inline">PP 719 Score</span><span class="cn-inline">第719号决议评分</span></div>
             </div>
             <div class="kpi-card animate-on-scroll">
-                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span></div>
+                <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">60%</div>
-                <div class="kpi-label"><span class="ru-inline">рынка</span><span class="en-inline">market</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Целевая доля к 2036</span><span class="en-inline">Target Share by 2036</span></div>
+                <div class="kpi-label"><span class="ru-inline">рынка</span><span class="en-inline">market</span><span class="cn-inline">市场份额</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Целевая доля к 2036</span><span class="en-inline">Target Share by 2036</span><span class="cn-inline">2036年目标份额</span></div>
             </div>
         </div>
     </section>
 
     <section id="products">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span></div>
-            <h2 class="section-title"><span class="ru-inline">Модельный ряд КТ-сканеров</span><span class="en-inline">CT Scanner Product Line</span></h2>
+            <div class="section-tag"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span><span class="cn-inline">产品</span></div>
+            <h2 class="section-title"><span class="ru-inline">Модельный ряд КТ-сканеров</span><span class="en-inline">CT Scanner Product Line</span><span class="cn-inline">CT扫描仪产品系列</span></h2>
             <p class="section-desc ru">Полная линейка компьютерных томографов от 16 до 128 срезов для всех сегментов рынка</p>
             <p class="section-desc en">Complete range of CT scanners from 16 to 128 slices for all market segments</p>
+            <p class="section-desc cn">面向各市场细分领域的16至128层CT扫描仪完整产品线</p>
         </div>
         <div class="products-grid">
             <div class="product-card animate-on-scroll">
-                <div class="product-badge" style="background: linear-gradient(135deg, #4CAF50, #45a049);"><span class="ru-inline">Базовый</span><span class="en-inline">Basic</span></div>
+                <div class="product-badge" style="background: linear-gradient(135deg, #4CAF50, #45a049);"><span class="ru-inline">Базовый</span><span class="en-inline">Basic</span><span class="cn-inline">基础型</span></div>
                 <div class="product-slices">16</div>
                 <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span></div>
                 <div class="product-model">SKD950-15UV</div>
-                <div class="product-target"><span class="ru-inline">Районные больницы • Скрининг</span><span class="en-inline">District Hospitals • Screening</span></div>
+                <div class="product-target"><span class="ru-inline">Районные больницы • Скрининг</span><span class="en-inline">District Hospitals • Screening</span><span class="cn-inline">区级医院 • 筛查</span></div>
                 <div class="product-specs">
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span></div><div class="spec-value">0.7 с</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span></div><div class="spec-value">40 кВт</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span></div><div class="spec-value">70 см</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span></div><div class="spec-value">200 кг</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span><span class="cn-inline">机架旋转</span></div><div class="spec-value">0.7 с</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span><span class="cn-inline">发生器</span></div><div class="spec-value">40 кВт</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span><span class="cn-inline">孔径</span></div><div class="spec-value">70 см</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span><span class="cn-inline">床面负载</span></div><div class="spec-value">200 кг</div></div>
                 </div>
             </div>
             <div class="product-card animate-on-scroll">
-                <div class="product-badge" style="background: linear-gradient(135deg, #2196F3, #1976D2);"><span class="ru-inline">Стандарт</span><span class="en-inline">Standard</span></div>
+                <div class="product-badge" style="background: linear-gradient(135deg, #2196F3, #1976D2);"><span class="ru-inline">Стандарт</span><span class="en-inline">Standard</span><span class="cn-inline">标准型</span></div>
                 <div class="product-slices">32</div>
-                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span></div>
+                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span><span class="cn-inline">层</span></div>
                 <div class="product-model">SKD1021-V</div>
-                <div class="product-target"><span class="ru-inline">Городские больницы • Диагностика</span><span class="en-inline">City Hospitals • Diagnostics</span></div>
+                <div class="product-target"><span class="ru-inline">Городские больницы • Диагностика</span><span class="en-inline">City Hospitals • Diagnostics</span><span class="cn-inline">市级医院 • 诊断</span></div>
                 <div class="product-specs">
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span></div><div class="spec-value">0.5 с</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span></div><div class="spec-value">50 кВт</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span></div><div class="spec-value">70 см</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span></div><div class="spec-value">200 кг</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span><span class="cn-inline">机架旋转</span></div><div class="spec-value">0.5 с</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span><span class="cn-inline">发生器</span></div><div class="spec-value">50 кВт</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span><span class="cn-inline">孔径</span></div><div class="spec-value">70 см</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span><span class="cn-inline">床面负载</span></div><div class="spec-value">200 кг</div></div>
                 </div>
             </div>
             <div class="product-card animate-on-scroll">
-                <div class="product-badge" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);"><span class="ru-inline">Основной</span><span class="en-inline">Main</span></div>
+                <div class="product-badge" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);"><span class="ru-inline">Основной</span><span class="en-inline">Main</span><span class="cn-inline">主力型</span></div>
                 <div class="product-slices">64</div>
-                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span></div>
+                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span><span class="cn-inline">层</span></div>
                 <div class="product-model">SKD1021-32V</div>
-                <div class="product-target"><span class="ru-inline">Региональные центры • Онкология</span><span class="en-inline">Regional Centers • Oncology</span></div>
+                <div class="product-target"><span class="ru-inline">Региональные центры • Онкология</span><span class="en-inline">Regional Centers • Oncology</span><span class="cn-inline">区域中心 • 肿瘤科</span></div>
                 <div class="product-specs">
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span></div><div class="spec-value">0.5 с</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span></div><div class="spec-value">65 кВт</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span></div><div class="spec-value">80 см</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span></div><div class="spec-value">227 кг</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span><span class="cn-inline">机架旋转</span></div><div class="spec-value">0.5 с</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span><span class="cn-inline">发生器</span></div><div class="spec-value">65 кВт</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span><span class="cn-inline">孔径</span></div><div class="spec-value">80 см</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span><span class="cn-inline">床面负载</span></div><div class="spec-value">227 кг</div></div>
                 </div>
             </div>
             <div class="product-card animate-on-scroll">
-                <div class="product-badge" style="background: linear-gradient(135deg, #FF9800, #F57C00);"><span class="ru-inline">Премиум</span><span class="en-inline">Premium</span></div>
+                <div class="product-badge" style="background: linear-gradient(135deg, #FF9800, #F57C00);"><span class="ru-inline">Премиум</span><span class="en-inline">Premium</span><span class="cn-inline">高端型</span></div>
                 <div class="product-slices">128</div>
-                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span></div>
+                <div class="product-slices-label"><span class="ru-inline">срезов</span><span class="en-inline">slices</span><span class="cn-inline">层</span></div>
                 <div class="product-model">SKD1021-64</div>
-                <div class="product-target"><span class="ru-inline">Федеральные центры • Кардиология</span><span class="en-inline">Federal Centers • Cardiology</span></div>
+                <div class="product-target"><span class="ru-inline">Федеральные центры • Кардиология</span><span class="en-inline">Federal Centers • Cardiology</span><span class="cn-inline">联邦中心 • 心脏科</span></div>
                 <div class="product-specs">
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span></div><div class="spec-value">0.35 с</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span></div><div class="spec-value">80 кВт</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span></div><div class="spec-value">80 см</div></div>
-                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span></div><div class="spec-value">227 кг</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Вращение гентри</span><span class="en-inline">Gantry Rotation</span><span class="cn-inline">机架旋转</span></div><div class="spec-value">0.35 с</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Генератор</span><span class="en-inline">Generator</span><span class="cn-inline">发生器</span></div><div class="spec-value">80 кВт</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Апертура</span><span class="en-inline">Aperture</span><span class="cn-inline">孔径</span></div><div class="spec-value">80 см</div></div>
+                    <div class="spec-item"><div class="spec-label"><span class="ru-inline">Нагрузка стола</span><span class="en-inline">Table Load</span><span class="cn-inline">床面负载</span></div><div class="spec-value">227 кг</div></div>
                 </div>
             </div>
         </div>
@@ -570,71 +597,72 @@
 
     <section id="cluster">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span></div>
-            <h2 class="section-title"><span class="ru-inline">Этапы развития кластера</span><span class="en-inline">Cluster Development Phases</span></h2>
+            <div class="section-tag"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span><span class="cn-inline">医疗科技产业集群</span></div>
+            <h2 class="section-title"><span class="ru-inline">Этапы развития кластера</span><span class="en-inline">Cluster Development Phases</span><span class="cn-inline">产业集群发展阶段</span></h2>
             <p class="section-desc ru">Трёхэтапная стратегия развития в крупнейший медтех-кластер России</p>
             <p class="section-desc en">Three-phase strategy to become Russia's largest medtech cluster</p>
+            <p class="section-desc cn">打造俄罗斯最大医疗科技产业集群的三阶段战略</p>
         </div>
         <div class="cluster-grid">
             <div class="cluster-phase animate-on-scroll">
                 <div class="phase-number">1</div>
                 <div class="phase-years">2025–2027</div>
-                <div class="phase-title ru">Компьютерные томографы</div><div class="phase-title en">CT Scanners</div>
+                <div class="phase-title ru">Компьютерные томографы</div><div class="phase-title en">CT Scanners</div><div class="phase-title cn">CT扫描仪</div>
                 <ul class="phase-products">
-                    <li class="ru">16/32/64/128-срезовые КТ</li><li class="en">16/32/64/128-slice CT</li>
-                    <li class="ru">Мобильные КТ-комплексы</li><li class="en">Mobile CT complexes</li>
+                    <li class="ru">16/32/64/128-срезовые КТ</li><li class="en">16/32/64/128-slice CT</li><li class="cn">16/32/64/128层CT</li>
+                    <li class="ru">Мобильные КТ-комплексы</li><li class="en">Mobile CT complexes</li><li class="cn">移动CT系统</li>
                     <li class="ru">Сервисная инфраструктура</li><li class="en">Service infrastructure</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">6.3</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span></div></div>
-                    <div class="phase-stat"><div class="phase-stat-value">140</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">6.3</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">140</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
             <div class="cluster-phase animate-on-scroll">
                 <div class="phase-number">2</div>
                 <div class="phase-years">с 2028</div>
-                <div class="phase-title ru">Сопутствующее оборудование</div><div class="phase-title en">Ancillary Equipment</div>
+                <div class="phase-title ru">Сопутствующее оборудование</div><div class="phase-title en">Ancillary Equipment</div><div class="phase-title cn">配套设备</div>
                 <ul class="phase-products">
-                    <li class="ru">Рентгеновские аппараты</li><li class="en">X-ray systems</li>
-                    <li class="ru">Флюорографы</li><li class="en">Fluorography units</li>
-                    <li class="ru">Маммографы</li><li class="en">Mammography systems</li>
+                    <li class="ru">Рентгеновские аппараты</li><li class="en">X-ray systems</li><li class="cn">X光机</li>
+                    <li class="ru">Флюорографы</li><li class="en">Fluorography units</li><li class="cn">胸透机</li>
+                    <li class="ru">Маммографы</li><li class="en">Mammography systems</li><li class="cn">乳腺机</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">15</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span></div></div>
-                    <div class="phase-stat"><div class="phase-stat-value">7 515</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">15</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">7 515</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
             <div class="cluster-phase animate-on-scroll">
                 <div class="phase-number">3</div>
                 <div class="phase-years">2028+</div>
-                <div class="phase-title ru">УЗИ-аппараты</div><div class="phase-title en">Ultrasound Systems</div>
+                <div class="phase-title ru">УЗИ-аппараты</div><div class="phase-title en">Ultrasound Systems</div><div class="phase-title cn">超声设备</div>
                 <ul class="phase-products">
-                    <li class="ru">Портативные УЗИ</li><li class="en">Portable ultrasound</li>
-                    <li class="ru">Экспертный класс</li><li class="en">Expert class</li>
-                    <li class="ru">Специализированные датчики</li><li class="en">Specialized probes</li>
+                    <li class="ru">Портативные УЗИ</li><li class="en">Portable ultrasound</li><li class="cn">便携式超声</li>
+                    <li class="ru">Экспертный класс</li><li class="en">Expert class</li><li class="cn">专家级</li>
+                    <li class="ru">Специализированные датчики</li><li class="en">Specialized probes</li><li class="cn">专用探头</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">10</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span></div></div>
-                    <div class="phase-stat"><div class="phase-stat-value">3 819</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">10</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">3 819</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
         </div>
         <div class="cluster-total">
-            <h3><span class="ru-inline">📊 Общие показатели медтех-кластера</span><span class="en-inline">📊 Total MedTech Cluster Indicators</span></h3>
+            <h3><span class="ru-inline">📊 Общие показатели медтех-кластера</span><span class="en-inline">📊 Total MedTech Cluster Indicators</span><span class="cn-inline">📊 医疗科技产业集群总体指标</span></h3>
             <div class="cluster-total-grid">
-                <div class="cluster-total-item"><div class="cluster-total-value">31.3</div><div class="cluster-total-label"><span class="ru-inline">млрд ₽ инвестиций</span><span class="en-inline">bln ₽ investment</span></div></div>
-                <div class="cluster-total-item"><div class="cluster-total-value">39.3</div><div class="cluster-total-label"><span class="ru-inline">млрд ₽ выручка/год</span><span class="en-inline">bln ₽ revenue/year</span></div></div>
-                <div class="cluster-total-item"><div class="cluster-total-value">11 474</div><div class="cluster-total-label"><span class="ru-inline">ед. оборудования/год</span><span class="en-inline">units/year</span></div></div>
-                <div class="cluster-total-item"><div class="cluster-total-value">1500+</div><div class="cluster-total-label"><span class="ru-inline">рабочих мест</span><span class="en-inline">jobs created</span></div></div>
-                <div class="cluster-total-item"><div class="cluster-total-value">60%</div><div class="cluster-total-label"><span class="ru-inline">доля рынка к 2036</span><span class="en-inline">market share by 2036</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">31.3</div><div class="cluster-total-label"><span class="ru-inline">млрд ₽ инвестиций</span><span class="en-inline">bln ₽ investment</span><span class="cn-inline">十亿卢布投资</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">39.3</div><div class="cluster-total-label"><span class="ru-inline">млрд ₽ выручка/год</span><span class="en-inline">bln ₽ revenue/year</span><span class="cn-inline">十亿卢布年收入</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">11 474</div><div class="cluster-total-label"><span class="ru-inline">ед. оборудования/год</span><span class="en-inline">units/year</span><span class="cn-inline">台设备/年</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">1500+</div><div class="cluster-total-label"><span class="ru-inline">рабочих мест</span><span class="en-inline">jobs created</span><span class="cn-inline">就业岗位</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">60%</div><div class="cluster-total-label"><span class="ru-inline">доля рынка к 2036</span><span class="en-inline">market share by 2036</span><span class="cn-inline">2036年市场份额</span></div></div>
             </div>
         </div>
     </section>
 
     <section id="timeline" class="timeline">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span></div>
-            <h2 class="section-title"><span class="ru-inline">Этапы реализации проекта КТ</span><span class="en-inline">CT Project Implementation Phases</span></h2>
+            <div class="section-tag"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span><span class="cn-inline">路线图</span></div>
+            <h2 class="section-title"><span class="ru-inline">Этапы реализации проекта КТ</span><span class="en-inline">CT Project Implementation Phases</span><span class="cn-inline">CT项目实施阶段</span></h2>
         </div>
         <div class="timeline-container">
             <div class="timeline-line"></div>
@@ -642,70 +670,79 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2026</div>
-                    <div class="timeline-title ru">Пилотный запуск</div><div class="timeline-title en">Pilot Launch</div>
+                    <div class="timeline-title ru">Пилотный запуск</div><div class="timeline-title en">Pilot Launch</div><div class="timeline-title cn">试点启动</div>
                     <div class="timeline-desc ru">Регистрация ООО в ОЭЗ Иннополис. Заключение договора с Syno-Tech. Получение РУ Росздравнадзора. Тестовые установки 4 моделей в клиники.</div>
                     <div class="timeline-desc en">LLC registration in Innopolis SEZ. Contract signing with Syno-Tech. Roszdravnadzor approval. Test installations of 4 models in clinics.</div>
+                    <div class="timeline-desc cn">在伊诺波利斯经济特区注册有限责任公司。与思诺医疗签订合同。获得俄罗斯卫生监督局批准。在医疗机构试点安装4种型号设备。</div>
                 </div>
             </div>
             <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2027</div>
-                    <div class="timeline-title ru">Масштабирование</div><div class="timeline-title en">Scaling Up</div>
+                    <div class="timeline-title ru">Масштабирование</div><div class="timeline-title en">Scaling Up</div><div class="timeline-title cn">规模扩张</div>
                     <div class="timeline-desc ru">Строительство производственного комплекса. Федеральное масштабирование. Производство 62 ед. Создание 506 рабочих мест.</div>
                     <div class="timeline-desc en">Production facility construction. Federal scaling. Production of 62 units. Creation of 506 jobs.</div>
+                    <div class="timeline-desc cn">建设生产综合体。全国范围扩展。生产62台。创造506个就业岗位。</div>
                 </div>
             </div>
             <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2028</div>
-                    <div class="timeline-title ru">Полная мощность КТ + начало УЗИ/рентген</div><div class="timeline-title en">Full CT Capacity + Ultrasound/X-ray Start</div>
+                    <div class="timeline-title ru">Полная мощность КТ + начало УЗИ/рентген</div><div class="timeline-title en">Full CT Capacity + Ultrasound/X-ray Start</div><div class="timeline-title cn">CT满产+超声/X光设备启动</div>
                     <div class="timeline-desc ru">Выход на полную производственную мощность КТ — 140 ед./год. Начало внедрения в производство УЗИ и рентген-оборудования.</div>
                     <div class="timeline-desc en">Reaching full CT production capacity — 140 units/year. Starting ultrasound and X-ray equipment production.</div>
+                    <div class="timeline-desc cn">CT扫描仪达到满产能力——年产140台。开始超声和X光设备生产。</div>
                 </div>
             </div>
             <div class="timeline-item animate-on-scroll">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2030</div>
-                    <div class="timeline-title ru">Полная мощность УЗИ/рентген + окупаемость</div><div class="timeline-title en">Full Ultrasound/X-ray Capacity + Break-even</div>
+                    <div class="timeline-title ru">Полная мощность УЗИ/рентген + окупаемость</div><div class="timeline-title en">Full Ultrasound/X-ray Capacity + Break-even</div><div class="timeline-title cn">超声/X光设备满产+投资回收</div>
                     <div class="timeline-desc ru">Выход на полную мощность по УЗИ и рентген-оборудованию. Полная окупаемость инвестиций (5 лет).</div>
                     <div class="timeline-desc en">Full capacity for ultrasound and X-ray equipment. Full investment payback (5 years).</div>
+                    <div class="timeline-desc cn">超声和X光设备达到满产能力。投资完全回收（5年）。</div>
                 </div>
             </div>
         </div>
     </section>
 
     <div id="partners" class="partners-banner">
-        <h2><span class="ru-inline">🤝 Ищем стратегических партнёров и инвесторов</span><span class="en-inline">🤝 Seeking Strategic Partners & Investors</span></h2>
+        <h2><span class="ru-inline">🤝 Ищем стратегических партнёров и инвесторов</span><span class="en-inline">🤝 Seeking Strategic Partners & Investors</span><span class="cn-inline">🤝 寻求战略合作伙伴和投资者</span></h2>
         <p class="ru">Мы открыты к сотрудничеству с медицинскими сетями, инвесторами и государственными корпорациями. Присоединяйтесь к проекту локализации медицинского оборудования в России.</p>
         <p class="en">We are open to cooperation with medical networks, investors, and state corporations. Join the medical equipment localization project in Russia.</p>
-        <a href="#contact" class="btn btn-primary"><span class="ru-inline">Связаться с нами</span><span class="en-inline">Contact Us</span></a>
+        <p class="cn">我们期待与医疗网络、投资者和国有企业开展合作。欢迎加入俄罗斯医疗设备本地化项目。</p>
+        <a href="#contact" class="btn btn-primary"><span class="ru-inline">Связаться с нами</span><span class="en-inline">Contact Us</span><span class="cn-inline">联系我们</span></a>
     </div>
 
     <section id="location">
         <div class="location-grid">
             <div class="location-content">
-                <h3 class="ru">ОЭЗ «Иннополис» — планируемая локация</h3><h3 class="en">SEZ "Innopolis" — Planned Location</h3>
+                <h3 class="ru">ОЭЗ «Иннополис» — планируемая локация</h3><h3 class="en">SEZ "Innopolis" — Planned Location</h3><h3 class="cn">伊诺波利斯经济特区 — 规划选址</h3>
                 <p class="ru">Компания «РКТ» реализует проект локализации производства компьютерных томографов на территории особой экономической зоны «Иннополис» в партнёрстве с ведущим китайским производителем Syno-Tech Medical Technologies.</p>
                 <p class="en">RCT is implementing a CT scanner manufacturing localization project in the Innopolis Special Economic Zone in partnership with leading Chinese manufacturer Syno-Tech Medical Technologies.</p>
+                <p class="cn">RCT公司正与中国领先制造商思诺医疗科技合作，在伊诺波利斯经济特区实施CT扫描仪生产本地化项目。</p>
                 <p class="ru">Статус резидента ОЭЗ обеспечивает налоговые льготы, льготные ставки аренды и доступ к инфраструктуре технопарка.</p>
                 <p class="en">SEZ resident status provides tax benefits, preferential rental rates, and access to technopark infrastructure.</p>
+                <p class="cn">经济特区入驻企业可享受税收优惠、租金优惠及科技园区基础设施服务。</p>
             </div>
             <div class="map-container">
                 <div id="map-ru" class="ru" style="height: 400px; width: 100%;"></div>
                 <div id="map-en" class="en" style="height: 400px; width: 100%;"></div>
+                <div id="map-cn" class="cn" style="height: 400px; width: 100%;"></div>
             </div>
         </div>
     </section>
 
     <section id="team" class="team">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Команда</span><span class="en-inline">Team</span></div>
-            <h2 class="section-title"><span class="ru-inline">Команда проекта</span><span class="en-inline">Project Team</span></h2>
+            <div class="section-tag"><span class="ru-inline">Команда</span><span class="en-inline">Team</span><span class="cn-inline">团队</span></div>
+            <h2 class="section-title"><span class="ru-inline">Команда проекта</span><span class="en-inline">Project Team</span><span class="cn-inline">项目团队</span></h2>
             <p class="section-desc ru">Опытная команда профессионалов с международными партнёрами</p>
             <p class="section-desc en">Experienced team of professionals with international partners</p>
+            <p class="section-desc cn">经验丰富的专业团队与国际合作伙伴</p>
         </div>
         <div class="team-grid">
             <div class="team-card animate-on-scroll">
@@ -714,13 +751,16 @@
                 </div>
                 <div class="team-name ru">Арсланов Даниял</div>
                 <div class="team-name en">Daniyal Arslanov</div>
+                <div class="team-name cn">丹尼亚尔·阿尔斯拉诺夫</div>
                 <div class="team-role ru">Инициатор проекта</div>
                 <div class="team-role en">Project Initiator</div>
+                <div class="team-role cn">项目发起人</div>
                 <p class="team-desc ru">Разработка инвестиционных проектов в ОЭЗ «Алабуга». Заключение и ведение контрактов с китайскими партнёрами. Взаимодействие с федеральными и региональными органами власти по проектам.</p>
                 <p class="team-desc en">Investment project development in SEZ Alabuga. Negotiating and managing contracts with Chinese partners. Engagement with federal and regional authorities on projects.</p>
+                <p class="team-desc cn">在阿拉布加经济特区开发投资项目。与中国合作伙伴签订和管理合同。就项目事宜与联邦和地区政府部门进行沟通协调。</p>
                 <div class="team-country">
                     <img src="https://flagcdn.com/w40/ru.png" alt="Russia">
-                    <span class="ru-inline">Россия</span><span class="en-inline">Russia</span>
+                    <span class="ru-inline">Россия</span><span class="en-inline">Russia</span><span class="cn-inline">俄罗斯</span>
                 </div>
             </div>
             <div class="team-card animate-on-scroll">
@@ -730,11 +770,13 @@
                 <div class="team-name">Syno-Tech Medical</div>
                 <div class="team-role ru">Технологический партнёр</div>
                 <div class="team-role en">Technology Partner</div>
+                <div class="team-role cn">技术合作伙伴</div>
                 <p class="team-desc ru">Разработчик и производитель КТ-сканеров. Поставка ПО, комплектующих, технологии сборки. Локализация производства детекторов. Сертификат ISO 13485:2016.</p>
                 <p class="team-desc en">CT scanner developer and manufacturer. Software, components, and assembly technology supply. Detector production localization. ISO 13485:2016 certified.</p>
+                <p class="team-desc cn">CT扫描仪研发和制造商。提供软件、零部件和组装技术。探测器生产本地化。通过ISO 13485:2016认证。</p>
                 <div class="team-country">
                     <img src="https://flagcdn.com/w40/cn.png" alt="China">
-                    <span class="ru-inline">Китай</span><span class="en-inline">China</span>
+                    <span class="ru-inline">Китай</span><span class="en-inline">China</span><span class="cn-inline">中国</span>
                 </div>
             </div>
             <div class="team-card animate-on-scroll">
@@ -744,11 +786,13 @@
                 <div class="team-name">Powersite</div>
                 <div class="team-role ru">Партнёр по генераторам</div>
                 <div class="team-role en">Generator Partner</div>
+                <div class="team-role cn">发生器合作伙伴</div>
                 <p class="team-desc ru">Технология производства высокочастотных генераторов рентгеновского излучения. Ключевой компонент для локализации КТ-сканеров и рентген-оборудования.</p>
                 <p class="team-desc en">High-frequency X-ray generator production technology. Key component for CT scanner and X-ray equipment localization.</p>
+                <p class="team-desc cn">高频X射线发生器生产技术。CT扫描仪和X光设备本地化的关键部件。</p>
                 <div class="team-country">
                     <img src="https://flagcdn.com/w40/cn.png" alt="China">
-                    <span class="ru-inline">Китай</span><span class="en-inline">China</span>
+                    <span class="ru-inline">Китай</span><span class="en-inline">China</span><span class="cn-inline">中国</span>
                 </div>
             </div>
         </div>
@@ -756,8 +800,8 @@
 
     <section id="contact">
         <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span></div>
-            <h2 class="section-title"><span class="ru-inline">Свяжитесь с нами</span><span class="en-inline">Get in Touch</span></h2>
+            <div class="section-tag"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span><span class="cn-inline">联系方式</span></div>
+            <h2 class="section-title"><span class="ru-inline">Свяжитесь с нами</span><span class="en-inline">Get in Touch</span><span class="cn-inline">联系我们</span></h2>
         </div>
         <div class="contact-grid">
             <div class="contact-info">
@@ -767,28 +811,41 @@
                 </div>
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-                    <div><div class="contact-label"><span class="ru-inline">Телефон</span><span class="en-inline">Phone</span></div><div class="contact-value"><a href="tel:+79173976039">+7 (917) 397-60-39</a></div></div>
+                    <div>
+                        <div class="contact-label"><span class="ru-inline">Телефон</span><span class="en-inline">Phone</span><span class="cn-inline">电话</span></div>
+                        <div class="contact-value"><a href="tel:+79173976039">+7 (917) 397-60-39</a></div>
+                        <div class="contact-value ru" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">MAX • Telegram</div>
+                    </div>
+                </div>
+                <div class="contact-item animate-on-scroll en cn">
+                    <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>
+                    <div>
+                        <div class="contact-label">WeChat</div>
+                        <div class="contact-value">DaniyalRCTMED</div>
+                        <div style="margin-top: 10px;"><img src="wechat-qr.jpg" alt="WeChat QR" style="width: 120px; height: 120px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.2);"></div>
+                    </div>
                 </div>
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-                    <div><div class="contact-label"><span class="ru-inline">Адрес</span><span class="en-inline">Address</span></div><div class="contact-value ru">ОЭЗ «Иннополис», Республика Татарстан</div><div class="contact-value en">SEZ "Innopolis", Republic of Tatarstan</div></div>
+                    <div><div class="contact-label"><span class="ru-inline">Адрес</span><span class="en-inline">Address</span><span class="cn-inline">地址</span></div><div class="contact-value ru">ОЭЗ «Иннополис», Республика Татарстан</div><div class="contact-value en">SEZ "Innopolis", Republic of Tatarstan</div><div class="contact-value cn">伊诺波利斯经济特区，鞑靼斯坦共和国</div></div>
                 </div>
             </div>
             <div class="contact-form">
-                <h4><span class="ru-inline">Отправить сообщение</span><span class="en-inline">Send a Message</span></h4>
+                <h4><span class="ru-inline">Отправить сообщение</span><span class="en-inline">Send a Message</span><span class="cn-inline">发送消息</span></h4>
                 <form action="https://formspree.io/f/meekgvge" method="POST">
-                    <div class="form-group"><label><span class="ru-inline">Имя</span><span class="en-inline">Name</span></label><input type="text" name="name" required></div>
+                    <div class="form-group"><label><span class="ru-inline">Имя</span><span class="en-inline">Name</span><span class="cn-inline">姓名</span></label><input type="text" name="name" required></div>
                     <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-                    <div class="form-group"><label><span class="ru-inline">Телефон</span><span class="en-inline">Phone</span> <span style="color: rgba(255,255,255,0.5); font-size: 10px; font-weight: normal;">(<span class="ru-inline">необязательно</span><span class="en-inline">optional</span>)</span></label><input type="tel" name="phone" placeholder="+7 (___) ___-__-__"></div>
-                    <div class="form-group"><label><span class="ru-inline">Компания</span><span class="en-inline">Company</span></label><input type="text" name="company"></div>
-                    <div class="form-group"><label><span class="ru-inline">Сообщение</span><span class="en-inline">Message</span></label><textarea rows="4" name="message"></textarea></div>
-                    <button type="submit" class="form-btn"><span class="ru-inline">Отправить</span><span class="en-inline">Send Message</span></button>
+                    <div class="form-group"><label><span class="ru-inline">Телефон</span><span class="en-inline">Phone</span><span class="cn-inline">电话</span> <span style="color: rgba(255,255,255,0.5); font-size: 10px; font-weight: normal;">(<span class="ru-inline">необязательно</span><span class="en-inline">optional</span><span class="cn-inline">选填</span>)</span></label><input type="tel" name="phone" placeholder="+7 (___) ___-__-__"></div>
+                    <div class="form-group en cn"><label>WeChat ID <span style="color: rgba(255,255,255,0.5); font-size: 10px; font-weight: normal;">(<span class="en-inline">optional</span><span class="cn-inline">选填</span>)</span></label><input type="text" name="wechat" placeholder="WeChat ID"></div>
+                    <div class="form-group"><label><span class="ru-inline">Компания</span><span class="en-inline">Company</span><span class="cn-inline">公司</span></label><input type="text" name="company"></div>
+                    <div class="form-group"><label><span class="ru-inline">Сообщение</span><span class="en-inline">Message</span><span class="cn-inline">留言</span></label><textarea rows="4" name="message"></textarea></div>
+                    <button type="submit" class="form-btn"><span class="ru-inline">Отправить</span><span class="en-inline">Send Message</span><span class="cn-inline">发送</span></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies</p></footer>
+    <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p></footer>
 
     <script>
         const langBtns = document.querySelectorAll('.lang-btn');
@@ -796,10 +853,11 @@
             btn.addEventListener('click', () => {
                 langBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                document.body.classList.remove('lang-en', 'lang-cn');
                 if (btn.dataset.lang === 'en') { 
                     document.body.classList.add('lang-en'); 
-                } else { 
-                    document.body.classList.remove('lang-en'); 
+                } else if (btn.dataset.lang === 'cn') {
+                    document.body.classList.add('lang-cn');
                 }
             });
         });
@@ -828,8 +886,12 @@
             if (mapEn) {
                 mapEn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=en_US" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
             }
+            // Яндекс.Карты - китайская версия
+            const mapCn = document.getElementById('map-cn');
+            if (mapCn) {
+                mapCn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=zh_CN" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
+            }
         });
     </script>
 </body>
 </html>
-      
