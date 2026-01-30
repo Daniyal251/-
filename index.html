@@ -8,23 +8,16 @@
     <meta name="keywords" content="КТ сканер, компьютерный томограф, медицинское оборудование, локализация производства, РКТ, Российские Компьютерные Технологии, Иннополис, Татарстан, Syno-Tech, CT scanner, medical equipment Russia">
     <meta name="author" content="РКТ — Российские Компьютерные Технологии">
     <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
     <meta name="yandex-verification" content="">
     <link rel="canonical" href="https://rct-med.ru/">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rct-med.ru/">
     <meta property="og:title" content="РКТ — Производство КТ-сканеров в России">
     <meta property="og:description" content="Локализация производства компьютерных томографов. КТ-сканеры 16-128 срезов. ОЭЗ Иннополис.">
     <meta property="og:image" content="https://rct-med.ru/logo-ru.png">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:locale:alternate" content="en_US">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="РКТ — Производство КТ-сканеров в России">
-    <meta name="twitter:description" content="Локализация производства компьютерных томографов. КТ-сканеры 16-128 срезов.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Play:wght@400;700&display=swap" rel="stylesheet">
@@ -53,7 +46,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         img { max-width: 100%; height: auto; }
 
@@ -208,7 +200,7 @@
 
         footer { text-align: center; padding: 40px; border-top: 1px solid var(--card-border); font-size: 14px; color: var(--text-muted); }
 
-        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
         .team-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 35px 25px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
         .team-card:hover { border-color: var(--primary-blue); transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,168,232,0.15); }
         .team-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal)); }
@@ -222,17 +214,9 @@
         .team-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
         .team-country { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 20px; font-size: 12px; color: var(--text-muted); }
         .team-country img { width: 20px; height: 14px; border-radius: 2px; }
-        @media (max-width: 1200px) { 
-            .team-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
-        @media (max-width: 768px) { 
-            .team-grid { grid-template-columns: 1fr; }
-            .team-card { padding: 25px 20px; }
-            .team-photo, .team-logo { width: 120px; height: 120px; }
-        }
-        @media (max-width: 600px) { 
-            .team-grid { grid-template-columns: 1fr; } 
-        }
+        @media (max-width: 1200px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } .team-card { padding: 25px 20px; } .team-photo, .team-logo { width: 120px; height: 120px; } }
+        @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
 
         /* Language switching - RU default */
         .ru { display: block; }
@@ -261,94 +245,83 @@
         .animate-on-scroll { opacity: 1; transform: translateY(0); transition: all 0.6s ease-out; }
         .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 1200px) { 
-            .kpi-grid, .products-grid { grid-template-columns: repeat(2, 1fr); } 
-            .cluster-grid { grid-template-columns: 1fr; } 
-            .cluster-total-grid { grid-template-columns: repeat(3, 1fr); } 
+        @media (max-width: 1200px) { .kpi-grid, .products-grid { grid-template-columns: repeat(2, 1fr); } .cluster-grid { grid-template-columns: 1fr; } .cluster-total-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        @media (max-width: 900px) { 
+            .hero { flex-direction: column; text-align: center; } 
+            .hero h1 { font-size: 38px; } 
+            .about-content-wrapper, .location-grid, .contact-grid { grid-template-columns: 1fr; } 
+            nav { display: none; } 
+            header { padding: 10px 20px; } 
+            section { padding: 60px 20px; } 
+            .strategy-flow { flex-direction: column; } 
+            .strategy-arrow { transform: rotate(90deg); } 
         }
         
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 42px; }
-            .section-title { font-size: 32px; }
-            .about-content-wrapper { grid-template-columns: 1fr; gap: 40px; }
-            .location-grid { grid-template-columns: 1fr; gap: 30px; }
-            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-            section { padding: 70px 30px; }
-        }
-        
-        @media (max-width: 768px) { 
+        @media (max-width: 768px) {
             header { padding: 10px 15px; }
-            nav { display: none; }
             .logo-img { height: 50px; }
             .lang-btn { padding: 6px 12px; font-size: 12px; }
             
             .hero { padding: 100px 20px 50px; min-height: auto; }
-            .hero h1 { font-size: 32px; line-height: 1.2; }
-            .hero p { font-size: 16px; }
-            .hero-badge { font-size: 11px; padding: 8px 15px; }
+            .hero h1 { font-size: 28px; line-height: 1.2; }
+            .hero p { font-size: 15px; }
+            .hero-badge { font-size: 10px; padding: 8px 12px; }
             .hero-buttons { flex-direction: column; align-items: center; width: 100%; }
-            .btn { width: 100%; justify-content: center; padding: 14px 24px; font-size: 14px; }
+            .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
             
             section { padding: 50px 15px; }
-            .section-title { font-size: 26px; }
-            .section-desc { font-size: 15px; }
-            .section-tag { font-size: 10px; padding: 6px 14px; }
+            .section-title { font-size: 24px; }
+            .section-desc { font-size: 14px; }
+            .section-tag { font-size: 10px; padding: 6px 12px; }
             
-            .about-text h3 { font-size: 24px; }
+            .about-text h3 { font-size: 22px; }
             .about-text p { font-size: 14px; }
             .about-features { grid-template-columns: 1fr; gap: 15px; }
-            .about-feature { padding: 15px; }
             
-            .strategy-flow { flex-direction: column; gap: 20px; }
-            .strategy-step { width: 100%; padding: 30px 20px; }
-            .strategy-number { font-size: 36px; }
-            .strategy-arrow { transform: rotate(90deg); font-size: 24px; }
+            .strategy-step { width: 100%; padding: 25px 15px; }
+            .strategy-number { font-size: 32px; }
             
             .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .kpi-card { padding: 20px 15px; }
-            .kpi-value { font-size: 32px; }
-            .kpi-label { font-size: 12px; }
+            .kpi-value { font-size: 28px; }
+            .kpi-label { font-size: 11px; }
             
-            .products-grid { grid-template-columns: 1fr; gap: 20px; }
-            .product-card { padding: 25px 20px; }
-            .product-slices { font-size: 48px; }
+            .products-grid { grid-template-columns: 1fr; gap: 15px; }
+            .product-card { padding: 20px 15px; }
+            .product-slices { font-size: 40px; }
             
-            .cluster-grid { grid-template-columns: 1fr; gap: 20px; }
-            .cluster-phase { padding: 25px 20px; }
-            .cluster-total-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-            .cluster-total { padding: 25px 20px; }
+            .cluster-phase { padding: 20px 15px; }
+            .cluster-total-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .cluster-total { padding: 20px 15px; }
             
-            .timeline-container { padding-left: 20px; }
-            .timeline-content { padding: 15px; }
-            .timeline-year { font-size: 20px; }
-            .timeline-title { font-size: 16px; }
-            .timeline-desc { font-size: 13px; }
+            .timeline-container { padding-left: 15px; }
+            .timeline-content { padding: 12px; }
+            .timeline-year { font-size: 18px; }
+            .timeline-desc { font-size: 12px; }
             
-            .partners-banner { padding: 40px 20px; }
-            .partners-banner h2 { font-size: 22px; }
-            .partners-banner p { font-size: 14px; }
+            .partners-banner { padding: 35px 15px; }
+            .partners-banner h2 { font-size: 20px; }
+            .partners-banner p { font-size: 13px; }
             
-            .location-content h3 { font-size: 22px; }
-            .location-content p { font-size: 14px; }
-            #map-ru, #map-en { height: 300px; }
+            .location-content h3 { font-size: 20px; }
+            .location-content p { font-size: 13px; }
+            #map-ru, #map-en { height: 280px; }
             
             .contact-info { gap: 15px; }
             .contact-item { padding: 20px 15px; flex-direction: column; text-align: center; }
-            .contact-value { font-size: 16px; word-break: break-all; }
-            .contact-form { padding: 25px 20px; }
-            .contact-form h4 { font-size: 20px; }
-            .form-group input, .form-group textarea { padding: 12px; font-size: 14px; }
-            .form-btn { padding: 14px; font-size: 14px; }
+            .contact-value { font-size: 15px; }
+            .contact-form { padding: 25px 15px; }
+            .contact-form h4 { font-size: 18px; }
             
-            footer { padding: 25px 15px; font-size: 12px; }
+            footer { padding: 20px 15px; font-size: 11px; }
         }
         
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 26px; }
-            .kpi-grid { grid-template-columns: 1fr; }
-            .cluster-total-grid { grid-template-columns: 1fr; }
-            .kpi-value { font-size: 28px; }
-            .product-slices { font-size: 40px; }
+        @media (max-width: 480px) { 
+            .hero h1 { font-size: 24px; }
+            .kpi-grid { grid-template-columns: 1fr; } 
+            .cluster-total-grid { grid-template-columns: 1fr; } 
+            .kpi-value { font-size: 26px; }
         }
     </style>
 </head>
@@ -725,7 +698,7 @@
             <p class="section-desc ru">Опытная команда профессионалов с международными партнёрами</p>
             <p class="section-desc en">Experienced team of professionals with international partners</p>
         </div>
-        <div class="team-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="team-grid">
             <div class="team-card animate-on-scroll">
                 <div class="team-photo">
                     <img src="daniyal-photo.png" alt="Арсланов Даниял">
@@ -781,7 +754,7 @@
             <div class="contact-info">
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                    <div><div class="contact-label">Email</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection#50393e363f102233247d3d35347e2225"><span class="__cf_email__" data-cfemail="d9b0b7bfb699abbaadf4b4bcbdf7abac">[email&#160;protected]</span></a></div></div>
+                    <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@rct-med.ru">info@rct-med.ru</a></div></div>
                 </div>
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
@@ -807,15 +780,20 @@
 
     <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies</p></footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const langBtns = document.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 langBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                if (btn.dataset.lang === 'en') { document.body.classList.add('lang-en'); } else { document.body.classList.remove('lang-en'); }
+                if (btn.dataset.lang === 'en') { 
+                    document.body.classList.add('lang-en'); 
+                } else { 
+                    document.body.classList.remove('lang-en'); 
+                }
             });
         });
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -823,6 +801,7 @@
                 if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
         }, { root: null, rootMargin: '0px', threshold: 0.1 });
@@ -837,4 +816,10 @@
             // Яндекс.Карты - английская версия
             const mapEn = document.getElementById('map-en');
             if (mapEn) {
-                mapEn.innerHTML = 
+                mapEn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=en_US" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
+            }
+        });
+    </script>
+</body>
+</html>
+      
