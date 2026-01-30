@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Карта сайта
+Sitemap: https://rct-med.ru/sitemap.xml
+
+# Главная страница
+Host: rct-med.ru
