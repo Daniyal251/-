@@ -26,6 +26,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0a0f1c">
+    <meta name="msapplication-TileColor" content="#0a0f1c">
+    <meta name="msapplication-TileImage" content="favicon-192x192.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -279,8 +283,9 @@
             .hero { flex-direction: column; text-align: center; } 
             .hero h1 { font-size: 38px; } 
             .about-content-wrapper, .location-grid, .contact-grid { grid-template-columns: 1fr; } 
-            nav { display: none; } 
-            header { padding: 10px 20px; } 
+            nav { gap: 8px; flex-wrap: wrap; justify-content: center; } 
+            nav a { font-size: 10px; letter-spacing: 0.5px; }
+            header { padding: 10px 15px; flex-wrap: wrap; gap: 10px; } 
             section { padding: 60px 20px; } 
             .strategy-flow { flex-direction: column; } 
             .strategy-arrow { transform: rotate(90deg); } 
@@ -346,6 +351,7 @@
         }
         
         @media (max-width: 480px) { 
+            nav { display: none; }
             .hero h1 { font-size: 24px; }
             .kpi-grid { grid-template-columns: 1fr; } 
             .cluster-total-grid { grid-template-columns: 1fr; } 
@@ -526,7 +532,7 @@
                 <div class="kpi-badge"><span class="ru-inline">план</span><span class="en-inline">planned</span><span class="cn-inline">计划</span></div>
                 <div class="kpi-value">60%</div>
                 <div class="kpi-label"><span class="ru-inline">рынка</span><span class="en-inline">market</span><span class="cn-inline">市场份额</span></div>
-                <div class="kpi-sublabel"><span class="ru-inline">Целевая доля к 2036</span><span class="en-inline">Target Share by 2036</span><span class="cn-inline">2036年目标份额</span></div>
+                <div class="kpi-sublabel"><span class="ru-inline">Целевая доля к 2030</span><span class="en-inline">Target Share by 2030</span><span class="cn-inline">2030年目标份额</span></div>
             </div>
         </div>
     </section>
@@ -614,7 +620,7 @@
                     <li class="ru">Сервисная инфраструктура</li><li class="en">Service infrastructure</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">6.3</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">6.3</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽ CAPEX</span><span class="en-inline">bln ₽ CAPEX</span><span class="cn-inline">十亿卢布 投资</span></div></div>
                     <div class="phase-stat"><div class="phase-stat-value">140</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
@@ -628,7 +634,7 @@
                     <li class="ru">Маммографы</li><li class="en">Mammography systems</li><li class="cn">乳腺机</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">15</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">15</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽ CAPEX</span><span class="en-inline">bln ₽ CAPEX</span><span class="cn-inline">十亿卢布 投资</span></div></div>
                     <div class="phase-stat"><div class="phase-stat-value">7 515</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
@@ -642,7 +648,7 @@
                     <li class="ru">Специализированные датчики</li><li class="en">Specialized probes</li><li class="cn">专用探头</li>
                 </ul>
                 <div class="phase-stats">
-                    <div class="phase-stat"><div class="phase-stat-value">10</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽</span><span class="en-inline">bln ₽</span><span class="cn-inline">十亿卢布</span></div></div>
+                    <div class="phase-stat"><div class="phase-stat-value">10</div><div class="phase-stat-label"><span class="ru-inline">млрд ₽ CAPEX</span><span class="en-inline">bln ₽ CAPEX</span><span class="cn-inline">十亿卢布 投资</span></div></div>
                     <div class="phase-stat"><div class="phase-stat-value">3 819</div><div class="phase-stat-label"><span class="ru-inline">ед./год</span><span class="en-inline">units/yr</span><span class="cn-inline">台/年</span></div></div>
                 </div>
             </div>
@@ -654,7 +660,7 @@
                 <div class="cluster-total-item"><div class="cluster-total-value">39.3</div><div class="cluster-total-label"><span class="ru-inline">млрд ₽ выручка/год</span><span class="en-inline">bln ₽ revenue/year</span><span class="cn-inline">十亿卢布年收入</span></div></div>
                 <div class="cluster-total-item"><div class="cluster-total-value">11 474</div><div class="cluster-total-label"><span class="ru-inline">ед. оборудования/год</span><span class="en-inline">units/year</span><span class="cn-inline">台设备/年</span></div></div>
                 <div class="cluster-total-item"><div class="cluster-total-value">1500+</div><div class="cluster-total-label"><span class="ru-inline">рабочих мест</span><span class="en-inline">jobs created</span><span class="cn-inline">就业岗位</span></div></div>
-                <div class="cluster-total-item"><div class="cluster-total-value">60%</div><div class="cluster-total-label"><span class="ru-inline">доля рынка к 2036</span><span class="en-inline">market share by 2036</span><span class="cn-inline">2036年市场份额</span></div></div>
+                <div class="cluster-total-item"><div class="cluster-total-value">60%</div><div class="cluster-total-label"><span class="ru-inline">доля рынка к 2030</span><span class="en-inline">market share by 2030</span><span class="cn-inline">2030年市场份额</span></div></div>
             </div>
         </div>
     </section>
@@ -807,7 +813,7 @@
             <div class="contact-info">
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                    <div><div class="contact-label">Email</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection#127b7c747d526071663f7f77763c6067"><span class="__cf_email__" data-cfemail="7d14131b123d0f1e0950101819530f08">[email&#160;protected]</span></a></div></div>
+                    <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@rct-med.ru">info@rct-med.ru</a></div></div>
                 </div>
                 <div class="contact-item animate-on-scroll ru">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
@@ -847,8 +853,29 @@
 
     <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p></footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        // Автоматическое определение языка из URL (?lang=ru / ?lang=en / ?lang=cn)
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        
+        if (langParam === 'en') {
+            document.body.classList.add('lang-en');
+        } else if (langParam === 'cn') {
+            document.body.classList.add('lang-cn');
+        }
+        
+        // Обновляем активную кнопку языка
         const langBtns = document.querySelectorAll('.lang-btn');
+        if (langParam) {
+            langBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === langParam) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+        
+        // Переключение языка по клику
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 langBtns.forEach(b => b.classList.remove('active'));
