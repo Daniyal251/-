@@ -816,13 +816,14 @@
             <div class="contact-info">
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                    <div><div class="contact-label">Email</div><div class="contact-value">info@rct-med.ru</div></div>
+                    <div><div class="contact-label">Email</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29b9c949db2809186df9f9796dc8087">[email&#160;protected]</a></div></div>
                 </div>
                 <div class="contact-item animate-on-scroll ru">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
                     <div>
                         <div class="contact-label">Телефон</div>
-                        <div class="contact-value"><a href="tel:+79173976039">+7 917 397-60-39</a> <span style="font-size: 12px; color: var(--text-muted);">• MAX • Telegram</span></div>
+                        <div class="contact-value"><a href="tel:+79173976039">+7 917 397-60-39</a></div>
+                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">MAX • Telegram</div>
                     </div>
                 </div>
                 <div class="contact-item animate-on-scroll en cn">
@@ -856,26 +857,36 @@
     <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p></footer>
 
     <script>
-        // Автоматическое определение языка из URL (?lang=ru / ?lang=en / ?lang=cn)
+        // Автоматическое определение языка из URL (/cn, /en, /ru или ?lang=)
+        const path = window.location.pathname.toLowerCase();
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         
-        if (langParam === 'en') {
+        // Определяем язык по пути или параметру
+        let lang = 'ru';
+        if (path.includes('/cn') || langParam === 'cn') {
+            lang = 'cn';
+        } else if (path.includes('/en') || langParam === 'en') {
+            lang = 'en';
+        } else if (path.includes('/ru') || langParam === 'ru') {
+            lang = 'ru';
+        }
+        
+        // Применяем класс языка
+        if (lang === 'en') {
             document.body.classList.add('lang-en');
-        } else if (langParam === 'cn') {
+        } else if (lang === 'cn') {
             document.body.classList.add('lang-cn');
         }
         
         // Обновляем активную кнопку языка
         const langBtns = document.querySelectorAll('.lang-btn');
-        if (langParam) {
-            langBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === langParam) {
-                    btn.classList.add('active');
-                }
-            });
-        }
+        langBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            }
+        });
         
         // Переключение языка по клику
         langBtns.forEach(btn => {
@@ -918,9 +929,4 @@
             // Яндекс.Карты - китайская версия
             const mapCn = document.getElementById('map-cn');
             if (mapCn) {
-                mapCn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=en_US" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
-            }
-        });
-    </script>
-</body>
-</html>
+                mapCn.innerHTML = '<
