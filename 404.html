@@ -37,6 +37,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "РКТ — Российские Компьютерные Технологии",
+        "alternateName": "RCT — Russian Computer Technologies",
+        "url": "https://rct-med.ru",
+        "logo": "https://rct-med.ru/logo-ru.png",
+        "description": "Локализация производства медицинского оборудования в России. Компьютерные томографы 16-128 срезов.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Иннополис",
+            "addressRegion": "Республика Татарстан",
+            "addressCountry": "RU"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-917-397-60-39",
+            "email": "info@rct-med.ru",
+            "contactType": "sales"
+        },
+        "sameAs": []
+    }
+    </script>
     
     <style>
         :root {
@@ -55,8 +80,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
             color: var(--text-light);
             line-height: 1.6;
@@ -361,6 +385,23 @@
             .kpi-value { font-size: 26px; }
         }
     </style>
+<!-- Яндекс.Метрика -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Яндекс.Метрика -->
 </head>
 <body>
     <header>
@@ -396,7 +437,7 @@
                 <div style="display: flex; align-items: center; gap: 12px;">
                     <div style="width: 12px; height: 12px; background: var(--accent-teal); border-radius: 50%; animation: pulse 2s infinite;"></div>
                     <div>
-                        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-teal); margin-bottom: 4px;"><span class="ru-inline">Текущий статус</span><span class="en-inline">Current Status</span><span class="cn-inline">当前状态</span></div>
+                        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-teal); margin-bottom: 4px;"><span class="ru-inline">Текущий статус • Февраль 2026</span><span class="en-inline">Current Status • February 2026</span><span class="cn-inline">当前状态 • 2026年2月</span></div>
                         <div style="font-size: 16px; font-weight: 600;"><span class="ru-inline">Регистрация ООО и поиск потенциальных партнёров</span><span class="en-inline">LLC Registration & Seeking Potential Partners</span><span class="cn-inline">有限责任公司注册及寻找潜在合作伙伴</span></div>
                     </div>
                 </div>
@@ -448,8 +489,8 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="ct-room-ru.png" alt="КТ сканер" class="gallery-img-ru">
-                <img src="ct-room-en.png" alt="CT Scanner" class="gallery-img-en">
+                <img src="ct-room-ru.png" alt="КТ сканер" class="gallery-img-ru" loading="lazy">
+                <img src="ct-room-en.png" alt="CT Scanner" class="gallery-img-en" loading="lazy">
             </div>
         </div>
     </section>
@@ -756,7 +797,7 @@
         <div class="team-grid">
             <div class="team-card animate-on-scroll">
                 <div class="team-photo">
-                    <img src="daniyal-photo.png" alt="Арсланов Даниял">
+                    <img src="daniyal-photo.png" alt="Арсланов Даниял" loading="lazy">
                 </div>
                 <div class="team-name ru">Арсланов Даниял</div>
                 <div class="team-name en">Daniyal Arslanov</div>
@@ -774,7 +815,7 @@
             </div>
             <div class="team-card animate-on-scroll">
                 <div class="team-logo">
-                    <img src="synotech-logo.png" alt="Syno-Tech">
+                    <img src="synotech-logo.png" alt="Syno-Tech" loading="lazy">
                 </div>
                 <div class="team-name">Syno-Tech Medical</div>
                 <div class="team-role ru">Технологический партнёр</div>
@@ -790,7 +831,7 @@
             </div>
             <div class="team-card animate-on-scroll">
                 <div class="team-logo">
-                    <img src="powersite-logo.png" alt="Powersite">
+                    <img src="powersite-logo.png" alt="Powersite" loading="lazy">
                 </div>
                 <div class="team-name">Powersite</div>
                 <div class="team-role ru">Партнёр по генераторам</div>
@@ -816,7 +857,7 @@
             <div class="contact-info">
                 <div class="contact-item animate-on-scroll">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                    <div><div class="contact-label">Email</div><div class="contact-value" id="contact-email"></div></div>
+                    <div><div class="contact-label">Email</div><div class="contact-value" id="contact-email"><noscript>info [at] rct-med.ru</noscript></div></div>
                 </div>
                 <div class="contact-item animate-on-scroll ru">
                     <div class="contact-icon"><svg fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
@@ -831,7 +872,7 @@
                     <div>
                         <div class="contact-label">WeChat</div>
                         <div class="contact-value">DaniyalRCTMED</div>
-                        <div style="margin-top: 10px;"><img src="wechat-qr.jpg" alt="WeChat QR" style="width: 120px; height: 120px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.2);"></div>
+                        <div style="margin-top: 10px;"><img src="wechat-qr.jpg" alt="WeChat QR" style="width: 120px; height: 120px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.2);" loading="lazy"></div>
                     </div>
                 </div>
                 <div class="contact-item animate-on-scroll">
@@ -848,13 +889,21 @@
                     <div class="form-group en cn"><label>WeChat ID <span style="color: rgba(255,255,255,0.5); font-size: 10px; font-weight: normal;">(<span class="en-inline">optional</span><span class="cn-inline">选填</span>)</span></label><input type="text" name="wechat" placeholder="WeChat ID"></div>
                     <div class="form-group"><label><span class="ru-inline">Компания</span><span class="en-inline">Company</span><span class="cn-inline">公司</span></label><input type="text" name="company"></div>
                     <div class="form-group"><label><span class="ru-inline">Сообщение</span><span class="en-inline">Message</span><span class="cn-inline">留言</span></label><textarea rows="4" name="message"></textarea></div>
-                    <button type="submit" class="form-btn"><span class="ru-inline">Отправить</span><span class="en-inline">Send Message</span><span class="cn-inline">发送</span></button>
+                    <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="privacy-consent" name="consent" required style="width: auto; min-width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent-teal); cursor: pointer;">
+                        <label for="privacy-consent" style="font-size: 12px; color: var(--text-muted); cursor: pointer; line-height: 1.4;">
+                            <span class="ru-inline">Я согласен на <a href="privacy.html" target="_blank" style="color: var(--accent-teal);">обработку персональных данных</a></span>
+                            <span class="en-inline">I agree to the <a href="privacy.html" target="_blank" style="color: var(--accent-teal);">Privacy Policy</a></span>
+                            <span class="cn-inline">我同意<a href="privacy.html" target="_blank" style="color: var(--accent-teal);">隐私政策</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="form-btn" id="submit-btn"><span class="ru-inline">Отправить</span><span class="en-inline">Send Message</span><span class="cn-inline">发送</span></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer><p>© 2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p></footer>
+    <footer><p>© 2025–2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p><p style="margin-top: 8px; font-size: 12px;"><a href="privacy.html" style="color: var(--text-muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);"><span class="ru-inline">Политика конфиденциальности</span><span class="en-inline">Privacy Policy</span><span class="cn-inline">隐私政策</span></a></p></footer>
 
     <script>
         // Определяем язык сразу (до загрузки DOM) и добавляем класс к html
@@ -921,6 +970,16 @@
                         document.body.classList.add('lang-cn');
                         document.documentElement.classList.add('lang-cn');
                     }
+                    // Обновляем карту для нового языка
+                    const newLang = btn.dataset.lang;
+                    const newMapLang = (newLang === 'en' || newLang === 'cn') ? 'en_US' : 'ru_RU';
+                    const newMapId = 'map-' + newLang;
+                    const allMaps = document.querySelectorAll('[id^="map-"]');
+                    allMaps.forEach(m => m.innerHTML = '');
+                    const newMapEl = document.getElementById(newMapId);
+                    if (newMapEl) {
+                        newMapEl.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=' + newMapLang + '" width="100%" height="100%" frameborder="0" style="border-radius: 20px;" loading="lazy"></iframe>';
+                    }
                 });
             });
             
@@ -939,20 +998,24 @@
             }, { root: null, rootMargin: '0px', threshold: 0.1 });
             document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
 
-            // Яндекс.Карты - русская версия
-            const mapRu = document.getElementById('map-ru');
-            if (mapRu) {
-                mapRu.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=ru_RU" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
+            // Блокировка кнопки при отправке формы
+            const form = document.querySelector('form');
+            const submitBtn = document.getElementById('submit-btn');
+            if (form && submitBtn) {
+                form.addEventListener('submit', function() {
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.6';
+                    submitBtn.style.cursor = 'not-allowed';
+                    submitBtn.innerHTML = '<span class="ru-inline">Отправка...</span><span class="en-inline">Sending...</span><span class="cn-inline">发送中...</span>';
+                });
             }
-            // Яндекс.Карты - английская версия
-            const mapEn = document.getElementById('map-en');
-            if (mapEn) {
-                mapEn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=en_US" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
-            }
-            // Яндекс.Карты - китайская версия
-            const mapCn = document.getElementById('map-cn');
-            if (mapCn) {
-                mapCn.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=en_US" width="100%" height="100%" frameborder="0" style="border-radius: 20px;"></iframe>';
+
+            // Яндекс.Карты - грузим только активную языковую версию
+            const mapLang = (lang === 'en' || lang === 'cn') ? 'en_US' : 'ru_RU';
+            const mapId = 'map-' + (lang === 'ru' ? 'ru' : (lang === 'en' ? 'en' : 'cn'));
+            const mapEl = document.getElementById(mapId);
+            if (mapEl) {
+                mapEl.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=' + mapLang + '" width="100%" height="100%" frameborder="0" style="border-radius: 20px;" loading="lazy"></iframe>';
             }
         });
     </script>
