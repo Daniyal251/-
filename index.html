@@ -318,6 +318,7 @@
             .strategy-arrow { transform: rotate(90deg); } 
         }
         
+        /* Мобильная версия (включая исправление Timeline) */
         @media (max-width: 768px) {
             header { padding: 10px 15px; }
             .logo-img { height: 70px; }
@@ -355,10 +356,37 @@
             .cluster-total-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .cluster-total { padding: 20px 15px; }
             
-            .timeline-container { padding-left: 15px; }
-            .timeline-content { padding: 12px; }
-            .timeline-year { font-size: 18px; }
-            .timeline-desc { font-size: 12px; }
+            /* Исправленный мобильный Timeline */
+            .timeline-container { padding-left: 0; }
+            .timeline-line { left: 20px; transform: translateX(0); }
+            
+            .timeline-item { 
+                width: 100%; 
+                margin-left: 0; 
+                padding-left: 50px; 
+                padding-right: 0; 
+                justify-content: flex-start; 
+                margin-bottom: 30px;
+            }
+            .timeline-item:nth-child(even) { 
+                margin-left: 0; 
+                padding-left: 50px; 
+                justify-content: flex-start; 
+            }
+            
+            .timeline-dot { 
+                left: 8px; 
+                right: auto;
+                top: 5px;
+            }
+            .timeline-item:nth-child(even) .timeline-dot { 
+                left: 8px; 
+                right: auto; 
+            }
+            
+            .timeline-content { padding: 15px; max-width: 100%; }
+            .timeline-year { font-size: 22px; }
+            .timeline-desc { font-size: 13px; }
             
             .partners-banner { padding: 35px 15px; }
             .partners-banner h2 { font-size: 20px; }
@@ -366,7 +394,7 @@
             
             .location-content h3 { font-size: 20px; }
             .location-content p { font-size: 13px; }
-            #map-ru, #map-en { height: 280px; }
+            #map-ru, #map-en, #map-cn { height: 280px; }
             
             .contact-info { gap: 15px; }
             .contact-item { padding: 20px 15px; flex-direction: column; text-align: center; }
