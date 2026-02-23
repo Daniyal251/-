@@ -171,17 +171,7 @@
         .about-image { position: relative; }
         .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
 
-        .strategy { text-align: center; }
-        .strategy-flow { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
-        .strategy-step { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px 30px; width: 280px; transition: all 0.3s; }
-        .strategy-step:hover { border-color: var(--primary-blue); transform: translateY(-10px); }
-        .strategy-step.active { border-color: var(--accent-teal); background: rgba(0,212,170,0.05); }
-        .strategy-number { font-family: 'Play', sans-serif; font-size: 48px; font-weight: 700; background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 15px; }
-        .strategy-step h4 { font-size: 20px; margin-bottom: 10px; }
-        .strategy-step p { font-size: 14px; color: var(--text-muted); }
-        .strategy-step .status-badge { display: inline-block; margin-top: 15px; padding: 6px 14px; background: rgba(0,212,170,0.2); color: var(--accent-teal); border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
-        .strategy-arrow { font-size: 30px; color: var(--primary-blue); }
-
+        /* KPI перемещен сюда */
         .kpi { background: var(--card-bg); }
         .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .kpi-card { background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); border-radius: 20px; padding: 30px; text-align: center; position: relative; transition: all 0.3s; }
@@ -203,6 +193,17 @@
         .spec-item { background: rgba(255,255,255,0.02); padding: 12px; border-radius: 10px; }
         .spec-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
         .spec-value { font-family: 'Play', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-light); }
+
+        .strategy { text-align: center; }
+        .strategy-flow { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+        .strategy-step { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px 30px; width: 280px; transition: all 0.3s; }
+        .strategy-step:hover { border-color: var(--primary-blue); transform: translateY(-10px); }
+        .strategy-step.active { border-color: var(--accent-teal); background: rgba(0,212,170,0.05); }
+        .strategy-number { font-family: 'Play', sans-serif; font-size: 48px; font-weight: 700; background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 15px; }
+        .strategy-step h4 { font-size: 20px; margin-bottom: 10px; }
+        .strategy-step p { font-size: 14px; color: var(--text-muted); }
+        .strategy-step .status-badge { display: inline-block; margin-top: 15px; padding: 6px 14px; background: rgba(0,212,170,0.2); color: var(--accent-teal); border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .strategy-arrow { font-size: 30px; color: var(--primary-blue); }
 
         .cluster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
         .cluster-phase { background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); border-radius: 20px; padding: 35px; position: relative; overflow: hidden; transition: all 0.3s; }
@@ -576,36 +577,6 @@
         </div>
     </section>
 
-    <section id="strategy" class="strategy">
-        <div class="section-header">
-            <div class="section-tag"><span class="ru-inline">Стратегия</span><span class="en-inline">Strategy</span><span class="cn-inline">发展战略</span></div>
-            <h2 class="section-title"><span class="ru-inline">От КТ к медтех-кластеру</span><span class="en-inline">From CT to MedTech Cluster</span><span class="cn-inline">从CT到医疗科技产业集群</span></h2>
-            <p class="section-desc ru">Поэтапная стратегия развития: начинаем с компьютерных томографов, затем расширяемся в полноценный медтех-кластер</p>
-            <p class="section-desc en">Phased development strategy: starting with CT scanners, then expanding into a full-scale medtech cluster</p>
-            <p class="section-desc cn">分阶段发展战略：从CT扫描仪起步，逐步扩展为完整的医疗科技产业集群</p>
-        </div>
-        <div class="strategy-flow">
-            <div class="strategy-step active">
-                <div class="strategy-number">01</div>
-                <h4 class="ru">Компьютерные томографы</h4><h4 class="en">CT Scanners</h4><h4 class="cn">CT扫描仪</h4>
-                <p class="ru">2025–2027: Локализация производства КТ 16–128 срезов, 140 ед./год</p><p class="en">2025–2027: CT scanner localization 16–128 slices, 140 units/yr</p><p class="cn">2025-2027年：16-128层CT扫描仪本地化生产，年产140台</p>
-                <div class="status-badge"><span class="ru-inline">Текущий этап</span><span class="en-inline">Current Phase</span><span class="cn-inline">当前阶段</span></div>
-            </div>
-            <div class="strategy-arrow">→</div>
-            <div class="strategy-step">
-                <div class="strategy-number">02</div>
-                <h4 class="ru">Сопутствующее оборудование</h4><h4 class="en">Ancillary Equipment</h4><h4 class="cn">配套设备</h4>
-                <p class="ru">С 2028: Рентгены, флюорографы, маммографы — 7 515 ед./год</p><p class="en">From 2028: X-rays, fluorography, mammography — 7,515 units/yr</p><p class="cn">2028年起：X光机、胸透机、乳腺机——年产7,515台</p>
-            </div>
-            <div class="strategy-arrow">→</div>
-            <div class="strategy-step">
-                <div class="strategy-number">03</div>
-                <h4 class="ru">УЗИ-аппараты</h4><h4 class="en">Ultrasound Systems</h4><h4 class="cn">超声设备</h4>
-                <p class="ru">С 2028: Портативные и экспертного класса — 3 819 ед./год</p><p class="en">From 2028: Portable and expert class — 3,819 units/yr</p><p class="cn">2028年起：便携式及专家级超声设备——年产3,819台</p>
-            </div>
-        </div>
-    </section>
-
     <section id="kpi" class="kpi">
         <div class="section-header">
             <div class="section-tag"><span class="ru-inline">Показатели</span><span class="en-inline">Key Metrics</span><span class="cn-inline">关键指标</span></div>
@@ -726,6 +697,36 @@
         </div>
     </section>
 
+    <section id="strategy" class="strategy">
+        <div class="section-header">
+            <div class="section-tag"><span class="ru-inline">Стратегия</span><span class="en-inline">Strategy</span><span class="cn-inline">发展战略</span></div>
+            <h2 class="section-title"><span class="ru-inline">От КТ к медтех-кластеру</span><span class="en-inline">From CT to MedTech Cluster</span><span class="cn-inline">从CT到医疗科技产业集群</span></h2>
+            <p class="section-desc ru">Поэтапная стратегия развития: начинаем с компьютерных томографов, затем расширяемся в полноценный медтех-кластер</p>
+            <p class="section-desc en">Phased development strategy: starting with CT scanners, then expanding into a full-scale medtech cluster</p>
+            <p class="section-desc cn">分阶段发展战略：从CT扫描仪起步，逐步扩展为完整的医疗科技产业集群</p>
+        </div>
+        <div class="strategy-flow">
+            <div class="strategy-step active">
+                <div class="strategy-number">01</div>
+                <h4 class="ru">Компьютерные томографы</h4><h4 class="en">CT Scanners</h4><h4 class="cn">CT扫描仪</h4>
+                <p class="ru">2025–2027: Локализация производства КТ 16–128 срезов, 140 ед./год</p><p class="en">2025–2027: CT scanner localization 16–128 slices, 140 units/yr</p><p class="cn">2025-2027年：16-128层CT扫描仪本地化生产，年产140台</p>
+                <div class="status-badge"><span class="ru-inline">Текущий этап</span><span class="en-inline">Current Phase</span><span class="cn-inline">当前阶段</span></div>
+            </div>
+            <div class="strategy-arrow">→</div>
+            <div class="strategy-step">
+                <div class="strategy-number">02</div>
+                <h4 class="ru">Сопутствующее оборудование</h4><h4 class="en">Ancillary Equipment</h4><h4 class="cn">配套设备</h4>
+                <p class="ru">С 2028: Рентгены, флюорографы, маммографы — 7 515 ед./год</p><p class="en">From 2028: X-rays, fluorography, mammography — 7,515 units/yr</p><p class="cn">2028年起：X光机、胸透机、乳腺机——年产7,515台</p>
+            </div>
+            <div class="strategy-arrow">→</div>
+            <div class="strategy-step">
+                <div class="strategy-number">03</div>
+                <h4 class="ru">УЗИ-аппараты</h4><h4 class="en">Ultrasound Systems</h4><h4 class="cn">超声设备</h4>
+                <p class="ru">С 2028: Портативные и экспертного класса — 3 819 ед./год</p><p class="en">From 2028: Portable and expert class — 3,819 units/yr</p><p class="cn">2028年起：便携式及专家级超声设备——年产3,819台</p>
+            </div>
+        </div>
+    </section>
+
     <section id="cluster">
         <div class="section-header">
             <div class="section-tag"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span><span class="cn-inline">医疗科技产业集群</span></div>
@@ -793,7 +794,7 @@
     <section id="timeline" class="timeline">
         <div class="section-header">
             <div class="section-tag"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span><span class="cn-inline">路线图</span></div>
-            <h2 class="section-title"><span class="ru-inline">Этапы реализации проекта КТ</span><span class="en-inline">CT Project Implementation Phases</span><span class="cn-inline">CT项目实施阶段</span></h2>
+            <h2 class="section-title"><span class="ru-inline">Дорожная карта проекта РКТ</span><span class="en-inline">RCT Project Roadmap</span><span class="cn-inline">RCT项目路线图</span></h2>
         </div>
         <div class="timeline-container">
             <div class="timeline-line"></div>
@@ -831,10 +832,10 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-year">2030</div>
-                    <div class="timeline-title ru">Полная мощность УЗИ/рентген + окупаемость</div><div class="timeline-title en">Full Ultrasound/X-ray Capacity + Break-even</div><div class="timeline-title cn">超声/X光设备满产+投资回收</div>
-                    <div class="timeline-desc ru">Выход на полную мощность по УЗИ и рентген-оборудованию. Полная окупаемость инвестиций (5 лет).</div>
-                    <div class="timeline-desc en">Full capacity for ultrasound and X-ray equipment. Full investment payback (5 years).</div>
-                    <div class="timeline-desc cn">超声和X光设备达到满产能力。投资完全回收（5年）。</div>
+                    <div class="timeline-title ru">Полная мощность ИВЛ/рентген + окупаемость</div><div class="timeline-title en">Full Ventilator/X-ray Capacity + Break-even</div><div class="timeline-title cn">呼吸机/X光设备满产+投资回收</div>
+                    <div class="timeline-desc ru">Выход на полную мощность по аппаратам ИВЛ и рентген-оборудованию. Полная окупаемость инвестиций (5 лет).</div>
+                    <div class="timeline-desc en">Full capacity for ventilators and X-ray equipment. Full investment payback (5 years).</div>
+                    <div class="timeline-desc cn">呼吸机和X光设备达到满产能力。投资完全回收（5年）。</div>
                 </div>
             </div>
         </div>
@@ -886,9 +887,9 @@
                 <div class="team-role ru">Инициатор проекта</div>
                 <div class="team-role en">Project Initiator</div>
                 <div class="team-role cn">项目发起人</div>
-                <p class="team-desc ru">Разработка инвестиционных проектов в ОЭЗ «Алабуга». Заключение и ведение контрактов с китайскими партнёрами. Взаимодействие с федеральными и региональными органами власти по проектам.</p>
-                <p class="team-desc en">Investment project development in SEZ Alabuga. Negotiating and managing contracts with Chinese partners. Engagement with federal and regional authorities on projects.</p>
-                <p class="team-desc cn">在阿拉布加经济特区开发投资项目。与中国合作伙伴签订和管理合同。就项目事宜与联邦和地区政府部门进行沟通协调。</p>
+                <p class="team-desc ru">Заключение и ведение контрактов с китайскими партнёрами. Взаимодействие с федеральными и региональными органами власти по проектам.</p>
+                <p class="team-desc en">Negotiating and managing contracts with Chinese partners. Engagement with federal and regional authorities on projects.</p>
+                <p class="team-desc cn">与中国合作伙伴签订和管理合同。就项目事宜与联邦和地区政府部门进行沟通协调。</p>
                 <div class="team-country">
                     <img src="https://flagcdn.com/w40/ru.png" alt="Russia">
                     <span class="ru-inline">Россия</span><span class="en-inline">Russia</span><span class="cn-inline">俄罗斯</span>
