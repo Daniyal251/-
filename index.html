@@ -11,7 +11,6 @@
     <meta name="yandex-verification" content="">
     <link rel="canonical" href="https://rct-med.ru/">
     
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rct-med.ru/">
     <meta property="og:title" content="Локализация производства КТ в России | РКТ — компьютерные томографы">
@@ -19,7 +18,6 @@
     <meta property="og:image" content="https://rct-med.ru/logo-ru.png">
     <meta property="og:locale" content="ru_RU">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -37,7 +35,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Play:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Schema.org разметка -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -80,13 +77,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         body {
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
+        body.menu-open { overflow: hidden; } /* Блокировка прокрутки при открытом меню */
         img { max-width: 100%; height: auto; }
 
         header {
@@ -97,12 +96,43 @@
             padding: 10px 40px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo { display: flex; align-items: center; gap: 15px; position: relative; z-index: 1002; }
         .logo-img { height: 90px; width: auto; }
-        nav { display: flex; align-items: center; gap: 25px; }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        nav a:hover { color: var(--primary-blue); }
-        .lang-switch { display: flex; gap: 5px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 5px; }
+        
+        /* Десктопное меню */
+        .desktop-nav { display: flex; align-items: center; gap: 25px; }
+        .desktop-nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .desktop-nav a:hover { color: var(--primary-blue); }
+        
+        /* Мобильное меню (скрыто по умолчанию) */
+        .mobile-menu {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--bg-gradient-mid);
+            z-index: 1000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            padding: 20px;
+        }
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu a { font-family: 'Play', sans-serif; font-size: 22px; color: var(--text-light); text-decoration: none; font-weight: 700; text-transform: uppercase; }
+        .mobile-menu a:hover { color: var(--primary-blue); }
+
+        /* Кнопка бургер */
+        .burger-btn {
+            display: none;
+            flex-direction: column; justify-content: space-between;
+            width: 30px; height: 20px;
+            background: transparent; border: none; cursor: pointer; padding: 0;
+            z-index: 1002;
+            position: relative;
+        }
+        .burger-btn span { width: 100%; height: 2px; background: var(--text-light); border-radius: 2px; transition: all 0.3s; }
+        .burger-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .burger-btn.active span:nth-child(2) { opacity: 0; }
+        .burger-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        .lang-switch { display: flex; gap: 5px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 5px; position: relative; z-index: 1002; }
         .lang-btn { padding: 8px 16px; border: none; background: transparent; color: var(--text-muted); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; border-radius: 5px; transition: all 0.3s; }
         .lang-btn.active { background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal)); color: white; }
 
@@ -310,21 +340,30 @@
             .hero { flex-direction: column; text-align: center; } 
             .hero h1 { font-size: 38px; } 
             .about-content-wrapper, .location-grid, .contact-grid { grid-template-columns: 1fr; } 
-            nav { gap: 8px; flex-wrap: wrap; justify-content: center; } 
-            nav a { font-size: 10px; letter-spacing: 0.5px; }
-            header { padding: 10px 15px; flex-wrap: wrap; gap: 10px; } 
+            
+            /* Скрытие десктопного меню */
+            .desktop-nav { display: none; }
+            
+            /* Показ кнопки бургера */
+            .burger-btn { display: flex; }
+
+            header { padding: 15px 20px; justify-content: space-between; } 
             section { padding: 60px 20px; } 
             .strategy-flow { flex-direction: column; } 
             .strategy-arrow { transform: rotate(90deg); } 
+            
+            .lang-switch { margin-right: 15px; } /* Отступ для переключателя языка от бургера */
+            
+            /* Центрирование контактов на мобильном */
+            .contact-item { padding: 25px 20px; flex-direction: column; text-align: center; justify-content: center; }
+            .contact-info { align-items: stretch; } /* Растянуть контейнеры */
         }
         
-        /* Мобильная версия (включая исправление Timeline) */
         @media (max-width: 768px) {
-            header { padding: 10px 15px; }
-            .logo-img { height: 70px; }
+            .logo-img { height: 60px; }
             .lang-btn { padding: 6px 12px; font-size: 12px; }
             
-            .hero { padding: 100px 20px 50px; min-height: auto; }
+            .hero { padding: 120px 20px 50px; min-height: auto; }
             .hero h1 { font-size: 28px; line-height: 1.2; }
             .hero p { font-size: 15px; }
             .hero-badge { font-size: 10px; padding: 8px 12px; }
@@ -356,7 +395,7 @@
             .cluster-total-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .cluster-total { padding: 20px 15px; }
             
-            /* Исправленный мобильный Timeline */
+            /* Исправление Timeline (Дорожной карты) */
             .timeline-container { padding-left: 0; }
             .timeline-line { left: 20px; transform: translateX(0); }
             
@@ -396,8 +435,6 @@
             .location-content p { font-size: 13px; }
             #map-ru, #map-en, #map-cn { height: 280px; }
             
-            .contact-info { gap: 15px; }
-            .contact-item { padding: 20px 15px; flex-direction: column; text-align: center; }
             .contact-value { font-size: 15px; }
             .contact-form { padding: 25px 15px; }
             .contact-form h4 { font-size: 18px; }
@@ -406,15 +443,13 @@
         }
         
         @media (max-width: 480px) { 
-            nav { display: none; }
             .hero h1 { font-size: 24px; }
             .kpi-grid { grid-template-columns: 1fr; } 
             .cluster-total-grid { grid-template-columns: 1fr; } 
             .kpi-value { font-size: 26px; }
         }
     </style>
-<!-- Яндекс.Метрика -->
-    <script type="text/javascript">
+<script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -429,15 +464,24 @@
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Яндекс.Метрика -->
-</head>
+    </head>
 <body>
+    <div class="mobile-menu">
+        <a href="#about"><span class="ru-inline">О компании</span><span class="en-inline">About</span><span class="cn-inline">关于我们</span></a>
+        <a href="#products"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span><span class="cn-inline">产品</span></a>
+        <a href="#cluster"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span><span class="cn-inline">医疗集群</span></a>
+        <a href="#timeline"><span class="ru-inline">Дорожная карта</span><span class="en-inline">Roadmap</span><span class="cn-inline">路线图</span></a>
+        <a href="#team"><span class="ru-inline">Команда</span><span class="en-inline">Team</span><span class="cn-inline">团队</span></a>
+        <a href="#contact"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span><span class="cn-inline">联系方式</span></a>
+    </div>
+
     <header>
         <div class="logo">
             <img src="logo-ru.png" alt="РКТ Logo" class="logo-img gallery-img-ru">
             <img src="logo-en.png" alt="RCT Logo" class="logo-img gallery-img-en">
         </div>
-        <nav>
+        
+        <nav class="desktop-nav">
             <a href="#about"><span class="ru-inline">О компании</span><span class="en-inline">About</span><span class="cn-inline">关于我们</span></a>
             <a href="#products"><span class="ru-inline">Продукция</span><span class="en-inline">Products</span><span class="cn-inline">产品</span></a>
             <a href="#cluster"><span class="ru-inline">Медтех-кластер</span><span class="en-inline">MedTech Cluster</span><span class="cn-inline">医疗集群</span></a>
@@ -445,10 +489,19 @@
             <a href="#team"><span class="ru-inline">Команда</span><span class="en-inline">Team</span><span class="cn-inline">团队</span></a>
             <a href="#contact"><span class="ru-inline">Контакты</span><span class="en-inline">Contact</span><span class="cn-inline">联系方式</span></a>
         </nav>
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang="ru">RU</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="cn">CN</button>
+        
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="cn">CN</button>
+            </div>
+            
+            <button class="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -934,7 +987,7 @@
     <footer><p>© 2025–2026 РКТ — Российские Компьютерные Технологии | RCT — Russian Computer Technologies | 俄罗斯计算机技术公司</p><p style="margin-top: 8px; font-size: 12px;"><a href="privacy.html" style="color: var(--text-muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);"><span class="ru-inline">Политика конфиденциальности</span><span class="en-inline">Privacy Policy</span><span class="cn-inline">隐私政策</span></a></p></footer>
 
     <script>
-        // Определяем язык сразу (до загрузки DOM) и добавляем класс к html
+        // Определяем язык сразу (до загрузки DOM)
         (function() {
             const path = window.location.pathname.toLowerCase();
             const urlParams = new URLSearchParams(window.location.search);
@@ -947,10 +1000,8 @@
                 lang = 'en';
             }
             
-            // Сохраняем язык глобально
             window.currentLang = lang;
             
-            // Применяем класс к html (он уже существует)
             if (lang === 'en') {
                 document.documentElement.classList.add('lang-en');
             } else if (lang === 'cn') {
@@ -958,9 +1009,8 @@
             }
         })();
         
-        // После загрузки DOM
         document.addEventListener('DOMContentLoaded', function() {
-            // Email (защита от Cloudflare)
+            // Email защита
             const emailEl = document.getElementById('contact-email');
             if (emailEl) {
                 const u = 'info'; const d = 'rct-med.ru';
@@ -968,14 +1018,13 @@
             }
             const lang = window.currentLang || 'ru';
             
-            // Дублируем класс на body
             if (lang === 'en') {
                 document.body.classList.add('lang-en');
             } else if (lang === 'cn') {
                 document.body.classList.add('lang-cn');
             }
             
-            // Обновляем активную кнопку языка
+            // Языковые кнопки
             const langBtns = document.querySelectorAll('.lang-btn');
             langBtns.forEach(btn => {
                 btn.classList.remove('active');
@@ -984,7 +1033,6 @@
                 }
             });
             
-            // Переключение языка по клику
             langBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     langBtns.forEach(b => b.classList.remove('active'));
@@ -998,7 +1046,8 @@
                         document.body.classList.add('lang-cn');
                         document.documentElement.classList.add('lang-cn');
                     }
-                    // Обновляем карту для нового языка
+                    
+                    // Обновляем карту
                     const newLang = btn.dataset.lang;
                     const newMapLang = (newLang === 'en' || newLang === 'cn') ? 'en_US' : 'ru_RU';
                     const newMapId = 'map-' + newLang;
@@ -1008,6 +1057,26 @@
                     if (newMapEl) {
                         newMapEl.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?pt=48.7446,55.7516&z=12&l=map&lang=' + newMapLang + '" width="100%" height="100%" frameborder="0" style="border-radius: 20px;" loading="lazy"></iframe>';
                     }
+                });
+            });
+            
+            // Логика мобильного меню
+            const burgerBtn = document.querySelector('.burger-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            
+            burgerBtn.addEventListener('click', function() {
+                burgerBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+            
+            // Закрываем меню при клике на ссылку
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    burgerBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
                 });
             });
             
@@ -1026,7 +1095,7 @@
             }, { root: null, rootMargin: '0px', threshold: 0.1 });
             document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
 
-            // Блокировка кнопки при отправке формы
+            // Блокировка кнопки формы
             const form = document.querySelector('form');
             const submitBtn = document.getElementById('submit-btn');
             if (form && submitBtn) {
@@ -1038,7 +1107,7 @@
                 });
             }
 
-            // Яндекс.Карты - грузим только активную языковую версию
+            // Инициализация карты
             const mapLang = (lang === 'en' || lang === 'cn') ? 'en_US' : 'ru_RU';
             const mapId = 'map-' + (lang === 'ru' ? 'ru' : (lang === 'en' ? 'en' : 'cn'));
             const mapEl = document.getElementById(mapId);
